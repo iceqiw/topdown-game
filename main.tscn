@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="1_2prsk"]
 [ext_resource type="Texture2D" uid="uid://ctdqbtpahfo4k" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="2_dfv1t"]
-[ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://player_2.tscn" id="3_unem1"]
+[ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://player.tscn" id="3_unem1"]
 [ext_resource type="Texture2D" uid="uid://b0kja3m0qjw1m" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="4_m4ga2"]
 [ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://enemy.tscn" id="6_jcyi1"]
 
@@ -102,9 +102,10 @@ texture = ExtResource("2_dfv1t")
 2:8/0 = 0
 15:10/size_in_atlas = Vector2i(2, 2)
 15:10/0 = 0
-15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4.5962, -8, 12.3744, 12.5511, -12.3744, 12.1976)
+15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.0815, 2.82843, 13.0815, 4.94975, 13.0815, 13.435, -13.0815, 11.6673)
 21:10/size_in_atlas = Vector2i(2, 3)
 21:10/0 = 0
+21:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.0815, 2.82843, 13.0815, 4.94975, 12.7279, 19.0919, 0, 22.6274, -12.0208, 16.617)
 9:18/size_in_atlas = Vector2i(3, 3)
 9:18/0 = 0
 9:18/0/y_sort_origin = 20
@@ -250,7 +251,7 @@ tile_set = SubResource("TileSet_8bp6n")
 
 [node name="item" type="TileMapLayer" parent="Map"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAHAP3/AAADABIAAAAHAAMAAAAJABIAAAAAAAQAAAAPAAoAAAABAPz/AAAPAAoAAAA=")
+tile_map_data = PackedByteArray("AAAHAP3/AAADABIAAAAHAAMAAAAJABIAAAAAAAQAAAAPAAoAAAABAPz/AAAPAAoAAAAKAAEAAAAVAAoAAAA=")
 tile_set = SubResource("TileSet_u75cd")
 
 [node name="water" type="TileMapLayer" parent="Map"]

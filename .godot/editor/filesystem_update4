@@ -1,2 +1,8 @@
 res://default_bus_layout.tres
 res://main.tscn
+res://player_2.tscn
+res://enemy.tscn
+res://player2.gd
+res://enemy.gd
+res://player.tscn
+res://script/global.gd
