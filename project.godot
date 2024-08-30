@@ -17,11 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-gs="*res://script/global.gd"
-
-[display]
-
-window/stretch/scale=2.0
+gs="*res://global.tscn"
+sm="*res://scene_manager.gd"
+cct="*res://canvas_layer.tscn"
 
 [input]
 

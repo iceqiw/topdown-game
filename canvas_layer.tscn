@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://carlmvb8e3uqm"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_ltytd"]
+
+[sub_resource type="Animation" id="Animation_s30ww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qjj2f"]
+resource_name = "change"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.992157, 0.968627, 0.980392, 0.0431373), Color(0.0524821, 0.00618213, 0.0410584, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7tvs"]
+_data = {
+"RESET": SubResource("Animation_s30ww"),
+"change": SubResource("Animation_qjj2f")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 9
+script = ExtResource("1_ltytd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.154876, 0.154876, 0.154876, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q7tvs")
+}

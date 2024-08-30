@@ -1,8 +1,11 @@
 res://default_bus_layout.tres
+res://canvas_layer.tscn
+res://scene_manager.gd
+res://canvas_layer.gd
 res://main.tscn
-res://player_2.tscn
-res://enemy.tscn
-res://player2.gd
-res://enemy.gd
+res://world2.tscn
 res://player.tscn
+res://enemy.gd
 res://script/global.gd
+res://player.gd
+res://enemy.tscn

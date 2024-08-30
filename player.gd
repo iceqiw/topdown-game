@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED = 5000.0
 
@@ -13,6 +13,13 @@ var is_moving := false
 var is_dead := false
 var damaged_cooldown := true
 var input_direction = Vector2.ZERO
+
+var enemy: Enemy
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
 	move(delta)
@@ -46,6 +53,7 @@ func move(delta: float) -> void:
 
 func _on_p_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
+		enemy=body
 		enemy_inattack_range = true
 		$damaged_timer.start()
 
@@ -59,13 +67,13 @@ func player():
 	pass
 
 func attack():
-	if Input.is_action_pressed("attack"):
-		is_attacking = true
-		gs.player_current_damage = true
-	else:
-		is_attacking = false
-		gs.player_current_damage = false
+	if Input.is_action_pressed("attack") :
+		act_damage()
 		
+func act_damage():
+	if null != enemy:
+		enemy.emit_signal("hp_change",20)
+	
 func enemy_attack():
 	if enemy_inattack_range and damaged_cooldown:
 		health -= 10
@@ -74,7 +82,7 @@ func enemy_attack():
 		if health <= 0:
 			is_dead = true
 			enemy_inattack_range = false
-			print("enemy killed")
+			print("player is killed")
 
 
 func _on_damage_timer_timeout() -> void:

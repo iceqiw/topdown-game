@@ -1,13 +1,24 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1724918843
-default_bus_layout.tres::AudioBusLayout::7486885040045158795::1724908348::0::1::::<><>::
-enemy.gd::GDScript::-1::1724850105::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::7330939966122139390::1724918843::0::1::::<><>::uid://dsjck4p3tqyja::::res://Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png<>res://enemy.gd
+::res://::1725023858
+base_scene.gd::GDScript::-1::1725010521::0::1::::BaseScene<>Node<>::
+canvas_layer.gd::GDScript::-1::1725012440::0::1::::Cly<>CanvasLayer<>::
+canvas_layer.tscn::PackedScene::4808626211693504124::1725012465::0::1::::<><>::res://canvas_layer.gd
+default_bus_layout.tres::AudioBusLayout::7486885040045158795::1725007078::0::1::::<><>::
+enemy.gd::GDScript::-1::1724924677::0::1::::<>CharacterBody2D<>::
+enemy.tscn::PackedScene::7330939966122139390::1725000737::0::1::::<><>::uid://dsjck4p3tqyja::::res://Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png<>res://enemy.gd
+entry.gd::GDScript::-1::1725005388::0::1::::EntryPoint<>Marker2D<>::
+gate.gd::GDScript::-1::1725009024::0::1::::<>Area2D<>::
+gate_top.gd::GDScript::-1::1725010159::0::1::::<>Area2D<>::
+global.tscn::PackedScene::3945252043088888238::1725004228::0::1::::<><>::res://script/global.gd
 icon.svg::CompressedTexture2D::3349148113667736046::1724311291::1724850869::1::::<><>::
-main.tscn::PackedScene::1024747979983783821::1724918843::0::1::::<><>::uid://d1p3kojnvmabd::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png<>uid://ctdqbtpahfo4k::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png<>uid://bdit8lhgq6y0a::::res://player.tscn<>uid://b0kja3m0qjw1m::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png<>uid://dcpfrl1bvkbfq::::res://enemy.tscn
-player2.gd::GDScript::-1::1724918840::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2614715379566824234::1724918843::0::1::::<><>::res://player2.gd<>uid://bni1dab3wbnns::::res://Ninja Adventure - Asset Pack/Actor/Characters/player.png
+main.tscn::PackedScene::1024747979983783821::1725012465::0::1::::<><>::uid://d1p3kojnvmabd::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png<>res://world1.gd<>uid://ctdqbtpahfo4k::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png<>uid://bdit8lhgq6y0a::::res://player.tscn<>uid://b0kja3m0qjw1m::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png<>uid://dcpfrl1bvkbfq::::res://enemy.tscn<>res://gate_top.gd<>res://entry.gd
+player.gd::GDScript::-1::1725010502::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::2614715379566824234::1725012465::0::1::::<><>::res://player.gd<>uid://bni1dab3wbnns::::res://Ninja Adventure - Asset Pack/Actor/Characters/player.png
 README.md::TextFile::-1::1724850803::0::1::::<><>::
+scene_manager.gd::GDScript::-1::1725012462::0::1::::SceneManger<>Node<>::
+world1.gd::GDScript::-1::1725007584::0::1::::<>BaseScene<>::
+world2.gd::GDScript::-1::1725007592::0::1::::<>BaseScene<>::
+world2.tscn::PackedScene::9216539811195462086::1725012465::0::1::::<><>::uid://d86ddpudpjhk::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png<>res://world2.gd<>uid://bdit8lhgq6y0a::::res://player.tscn<>uid://cnik21pvjhbi0::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorB.png<>uid://ctdqbtpahfo4k::::res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png<>res://entry.gd<>res://gate.gd
 ::res://Ninja Adventure - Asset Pack/::1724850869
 Example 5 ( Old Version).png::CompressedTexture2D::7022072248848348425::1569074650::1724850869::1::::<><>::
 LICENSE.txt::TextFile::-1::1614073098::0::1::::<><>::
@@ -2062,3 +2073,5 @@ nine_path_panel.png::CompressedTexture2D::7655695920165262719::1713448056::17248
 nine_path_panel.png::CompressedTexture2D::244236183085156018::1713448404::1724850869::1::::<><>::
 ::res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeWood4/::1724850869
 nine_path_panel.png::CompressedTexture2D::9050257433295332855::1713449522::1724850869::1::::<><>::
+::res://script/::1725006585
+global.gd::GDScript::-1::1725006585::0::1::::<>Node<>::

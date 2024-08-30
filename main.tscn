@@ -1,10 +1,16 @@
-[gd_scene load_steps=12 format=4 uid="uid://ounpjvwdys34"]
+[gd_scene load_steps=16 format=4 uid="uid://ounpjvwdys34"]
 
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="1_2prsk"]
+[ext_resource type="Script" path="res://world1.gd" id="1_4liiu"]
 [ext_resource type="Texture2D" uid="uid://ctdqbtpahfo4k" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="2_dfv1t"]
 [ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://player.tscn" id="3_unem1"]
 [ext_resource type="Texture2D" uid="uid://b0kja3m0qjw1m" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="4_m4ga2"]
 [ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://enemy.tscn" id="6_jcyi1"]
+[ext_resource type="Script" path="res://gate_top.gd" id="7_ise1g"]
+[ext_resource type="Script" path="res://entry.gd" id="7_v8lcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pwyi"]
+size = Vector2(34, 22)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okbmn"]
 texture = ExtResource("1_2prsk")
@@ -238,10 +244,29 @@ sources/0 = SubResource("TileSetAtlasSource_u4ht3")
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_4liiu")
 metadata/_edit_horizontal_guides_ = [0.0]
 
 [node name="Map" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Map/StaticBody2D"]
+polygon = PackedVector2Array(-289, -113, -289, 114, 194, 112, 195, -115, -10, -114, -10.8405, -135.853, -30, -136, -11, -140, 298, -150, 276, 69, 155, 144, -244, 141, -362, 104, -331, -105, -299, -146, -46, -141, -30, -136, -46, -135, -46, -113)
+
+[node name="entry1" type="Marker2D" parent="Map"]
+position = Vector2(-28, -103)
+script = ExtResource("7_v8lcm")
+
+[node name="gate_top" type="Area2D" parent="Map"]
+script = ExtResource("7_ise1g")
+path = "res://world2.tscn"
+entry_point = "entry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/gate_top"]
+position = Vector2(-28, -124)
+shape = SubResource("RectangleShape2D_8pwyi")
 
 [node name="ground" type="TileMapLayer" parent="Map"]
 z_index = -1
@@ -256,12 +281,18 @@ tile_set = SubResource("TileSet_u75cd")
 
 [node name="water" type="TileMapLayer" parent="Map"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADx/wAAAAACAAIAAADx////AAACAAEAAADx//7/AAACAAEAAADx//3/AAACAAEAAADx//z/AAACAAAAAADw/wAAAAABAAIAAADw////AAABAAEAAADw//7/AAABAAEAAADw//3/AAABAAEAAADw//z/AAABAAAAAADv/wAAAAAAAAIAAADv////AAAAAAEAAADv//7/AAAAAAEAAADv//3/AAAAAAEAAADv//z/AAAAAAAAAAAKAPv/AAACAAIAAAAKAPr/AAACAAEAAAAKAPn/AAACAAAAAAAJAPv/AAABAAIAAAAJAPr/AAABAAEAAAAJAPn/AAABAAAAAAAIAPv/AAABAAIAAAAIAPr/AAABAAEAAAAIAPn/AAABAAAAAAAHAPv/AAABAAIAAAAHAPr/AAABAAEAAAAHAPn/AAABAAAAAAAGAPv/AAABAAIAAAAGAPr/AAABAAEAAAAGAPn/AAABAAAAAAAFAPv/AAAAAAIAAAAFAPr/AAAAAAEAAAAFAPn/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADx/wAAAAACAAIAAADx////AAACAAEAAADx//7/AAACAAEAAADx//3/AAACAAEAAADx//z/AAACAAAAAADw/wAAAAABAAIAAADw////AAABAAEAAADw//7/AAABAAEAAADw//3/AAABAAEAAADw//z/AAABAAAAAADv/wAAAAAAAAIAAADv////AAAAAAEAAADv//7/AAAAAAEAAADv//3/AAAAAAEAAADv//z/AAAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAEAAAD5/wMAAAAAAAIAAAD6/wEAAAABAAAAAAD6/wIAAAABAAEAAAD6/wMAAAABAAIAAAD7/wEAAAABAAAAAAD7/wIAAAABAAEAAAD7/wMAAAABAAIAAAD8/wEAAAABAAAAAAD8/wIAAAABAAEAAAD8/wMAAAABAAIAAAD9/wEAAAABAAAAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+/wEAAAACAAAAAAD+/wIAAAACAAEAAAD+/wMAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_04ks8")
 
-[node name="hero" parent="." instance=ExtResource("3_unem1")]
+[node name="Player" parent="." instance=ExtResource("3_unem1")]
 texture_filter = 1
 position = Vector2(48, 32)
 
-[node name="enemy" parent="." instance=ExtResource("6_jcyi1")]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_speed = 10.0
+
+[node name="Enemy" parent="." instance=ExtResource("6_jcyi1")]
 position = Vector2(-112, -8)
+
+[connection signal="body_entered" from="Map/gate_top" to="Map/gate_top" method="_on_body_entered"]
