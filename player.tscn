@@ -1,7 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://bdit8lhgq6y0a"]
+[gd_scene load_steps=47 format=3 uid="uid://bdit8lhgq6y0a"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7wdog"]
 [ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="1_l7i0m"]
+[ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://control.tscn" id="3_d8qd1"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="4_i3160"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vxwne"]
 radius = 7.0
@@ -460,7 +462,7 @@ texture = ExtResource("1_l7i0m")
 centered = false
 hframes = 6
 vframes = 10
-frame = 8
+frame = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -482,6 +484,24 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_2im6j")
 
 [node name="damaged_timer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("3_d8qd1")]
+offset_left = 5.0
+offset_top = 4.0
+offset_right = -1019.0
+offset_bottom = -639.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(48, 37)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 0
+limit_bottom = 0
+limit_smoothed = true
+script = ExtResource("4_i3160")
 
 [connection signal="body_entered" from="p_hitbox" to="." method="_on_p_hitbox_body_entered"]
 [connection signal="body_exited" from="p_hitbox" to="." method="_on_p_hitbox_body_exited"]

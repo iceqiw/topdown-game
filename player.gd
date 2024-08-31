@@ -1,11 +1,8 @@
 class_name Player extends CharacterBody2D
 
 const SPEED = 5000.0
-
-var health = 100
-
-var enemy_inattack_range = false
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var control: StatusBar = $CanvasLayer/Control
 
 var is_attacking := false
 var is_idle := true
@@ -16,15 +13,16 @@ var input_direction = Vector2.ZERO
 
 var enemy: Enemy
 
+var health = 100
+signal take_damage(hp)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	take_damage.connect(_deal_on_damage)
 
 func _physics_process(delta: float) -> void:
 	move(delta)
 	attack()
-	enemy_attack()
 
 func update_direction() -> Vector2:
 	if input_direction.y == 0:
@@ -52,38 +50,36 @@ func move(delta: float) -> void:
 
 
 func _on_p_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("enemy"):
+	if body is Enemy:
 		enemy=body
-		enemy_inattack_range = true
 		$damaged_timer.start()
 
 		
 func _on_p_hitbox_body_exited(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
+	if body is Enemy:
 		$damaged_timer.stop()
-
-func player():
-	pass
 
 func attack():
 	if Input.is_action_pressed("attack") :
+		is_attacking=true
 		act_damage()
+	if Input.is_action_just_released("attack"):
+		is_attacking=false
 		
 func act_damage():
 	if null != enemy:
 		enemy.emit_signal("hp_change",20)
 	
-func enemy_attack():
-	if enemy_inattack_range and damaged_cooldown:
-		health -= 10
-		damaged_cooldown = false
-		print("player:", health)
-		if health <= 0:
-			is_dead = true
-			enemy_inattack_range = false
-			print("player is killed")
+func _deal_on_damage(hp):
+	health -= hp
+	print("player:", health)
+	control.emit_signal("update_hp_bar",health,100)
+	if health <= 0:
+		is_dead = true
+		print("player is killed")
+		self.queue_free()
 
 
 func _on_damage_timer_timeout() -> void:
 	damaged_cooldown = true;
+	health+=1
