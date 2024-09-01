@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 class_name Enemy
 
+@onready var ap: AnimationPlayer = $AnimationPlayer
+@onready var effect: AnimationPlayer = $Effect
 
 @export var damage:int = 10
-@export var SPEED = 40.0
+@export var SPEED = 400.0
 
 var damaged_cooldown = true
 var player: Player
@@ -16,11 +18,13 @@ signal hp_change(hp)
 func _ready() -> void:
 	hp_change.connect(_deal_on_damage)
 	$hpbar.value=health
+	ap.play("idle")
 	
 func _physics_process(delta: float) -> void:
 	if player != null:
-		var move = position.direction_to(player.position) * SPEED * delta
-		move_and_collide(move)
+		var move = position.direction_to(player.position)
+		velocity=move * delta * SPEED
+		move_and_slide()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -44,6 +48,7 @@ func _deal_on_damage(hp):
 	if damaged_cooldown and health>=0 :
 		health = health - hp
 		print("enemy HP is: ",health)
+		effect.play("damaged")
 		$hpbar.value=health
 		damaged_cooldown = false
 	if health <= 0:

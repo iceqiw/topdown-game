@@ -8,12 +8,6 @@ class_name Cly
 func _ready() -> void:
 	color_rect.hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func play():
 	color_rect.show()
 	set_layer(12)

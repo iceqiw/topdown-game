@@ -13,10 +13,6 @@ func _ready() -> void:
 	
 	update_pos(sm.entry)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func update_pos(entry_name):
 	for entry in get_tree().get_nodes_in_group("group_entry"):
 		if entry.name==entry_name:

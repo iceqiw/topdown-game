@@ -10,9 +10,6 @@ func _ready() -> void:
 	update_hp_bar.connect(_update_bar)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _update_bar(hp,max_hp):
+	print(max_hp,"max hp")
 	hp_bar.value=hp

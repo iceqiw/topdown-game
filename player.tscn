@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bdit8lhgq6y0a"]
+[gd_scene load_steps=50 format=3 uid="uid://bdit8lhgq6y0a"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7wdog"]
 [ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="1_l7i0m"]
@@ -441,28 +441,84 @@ states/attack/position = Vector2(538, 204)
 states/dead/node = SubResource("AnimationNodeAnimation_fybq0")
 states/dead/position = Vector2(538, 28)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_4s61q")
-states/idle/position = Vector2(443, 108)
+states/idle/position = Vector2(446, 100)
 states/move/node = SubResource("AnimationNodeBlendSpace2D_whxdv")
 states/move/position = Vector2(644, 108)
 transitions = ["idle", "move", SubResource("AnimationNodeStateMachineTransition_kbrka"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_g2hj6"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4sd46"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_2agt3"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_kycid"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_xbvlr"), "attack", "move", SubResource("AnimationNodeStateMachineTransition_286va"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_3uxjj"), "move", "dead", SubResource("AnimationNodeStateMachineTransition_a731y")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2im6j"]
-radius = 13.0
+radius = 15.0
+
+[sub_resource type="Animation" id="Animation_2p8ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8j6pg"]
+resource_name = "damaged"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.0156863)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gwtlg"]
+_data = {
+"RESET": SubResource("Animation_2p8ud"),
+"damaged": SubResource("Animation_8j6pg")
+}
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_7wdog")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("3_d8qd1")]
+offset_left = 5.0
+offset_top = 4.0
+offset_right = -1019.0
+offset_bottom = -639.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vxwne")
 one_way_collision_margin = 0.0
 
+[node name="Marker2D" type="Marker2D" parent="CollisionShape2D"]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
 position = Vector2(-24, -40)
 texture = ExtResource("1_l7i0m")
 centered = false
 hframes = 6
 vframes = 10
-frame = 9
+frame = 7
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 45.0
+offset_bottom = 53.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -477,32 +533,29 @@ parameters/attack/blend_position = Vector2(-0.00658762, 0.906137)
 parameters/idle/blend_position = Vector2(0.628253, 0.193154)
 parameters/move/blend_position = Vector2(-0.953887, 0.00361013)
 
-[node name="p_hitbox" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="p_hitbox"]
-position = Vector2(0, -7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_2im6j")
 
 [node name="damaged_timer" type="Timer" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("3_d8qd1")]
-offset_left = 5.0
-offset_top = 4.0
-offset_right = -1019.0
-offset_bottom = -639.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(48, 37)
-zoom = Vector2(2, 2)
+position = Vector2(-46, -33)
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
-limit_right = 0
-limit_bottom = 0
-limit_smoothed = true
+limit_right = 1152
+limit_bottom = 648
+position_smoothing_enabled = true
 script = ExtResource("4_i3160")
 
-[connection signal="body_entered" from="p_hitbox" to="." method="_on_p_hitbox_body_entered"]
-[connection signal="body_exited" from="p_hitbox" to="." method="_on_p_hitbox_body_exited"]
+[node name="Effect" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gwtlg")
+}
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_p_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_p_hitbox_body_exited"]
 [connection signal="timeout" from="damaged_timer" to="." method="_on_damage_timer_timeout"]

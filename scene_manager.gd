@@ -7,10 +7,6 @@ var entry:String
 func _ready() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func change_scence(from,path,entry_name:String) -> void:
 	hero=from.hero
 	entry=entry_name
