@@ -1,9 +1,10 @@
-res://default_bus_layout.tres
-res://player.tscn
-res://world1.tscn
-res://enemy.tscn
-res://control.tscn
+res://box1.tscn
 res://Scenes/world1.tscn
-res://Scripts/player.gd
-res://global.tscn
+res://enemy.tscn
+res://player.tscn
 res://Scenes/world2.tscn
+res://Scripts/global.gd
+res://control.tscn
+res://canvas_layer.tscn
+res://Scripts/box_1.gd
+res://Scripts/player.gd

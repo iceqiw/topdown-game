@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvyrrag07r1eg"]
+
+[ext_resource type="Texture2D" uid="uid://baqwvei62xvg6" path="res://Assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="1_iievt"]
+[ext_resource type="Script" path="res://Scripts/box_1.gd" id="2_wv145"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vasxv"]
+radius = 5.09902
+
+[node name="HitBox" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("2_wv145")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vasxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iievt")

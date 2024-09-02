@@ -347,6 +347,7 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_u68nl")
 blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_6dh8a")
 blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fybq0"]
 animation = &"dead"
@@ -399,32 +400,34 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kbrka"]
 advance_mode = 2
-advance_expression = "is_moving"
+advance_expression = "is_moving && not is_attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g2hj6"]
 advance_mode = 2
-advance_expression = "is_idle"
+advance_expression = "is_idle && not is_attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4sd46"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2agt3"]
+priority = 0
 advance_mode = 2
-advance_expression = "is_attacking"
+advance_expression = "is_attacking && not is_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kycid"]
+priority = 0
 advance_mode = 2
-advance_expression = "is_attacking"
+advance_expression = "is_attacking and not is_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xbvlr"]
 switch_mode = 2
 advance_mode = 2
-advance_expression = "is_idle"
+advance_expression = "is_idle and not is_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_286va"]
 switch_mode = 2
 advance_mode = 2
-advance_expression = "is_moving"
+advance_expression = "is_moving and not is_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3uxjj"]
 advance_mode = 2
@@ -490,7 +493,6 @@ _data = {
 script = ExtResource("1_7wdog")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_d8qd1")]
 offset_left = 5.0
@@ -502,8 +504,6 @@ offset_bottom = -639.0
 shape = SubResource("CircleShape2D_vxwne")
 one_way_collision_margin = 0.0
 
-[node name="Marker2D" type="Marker2D" parent="CollisionShape2D"]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
 position = Vector2(-24, -40)
@@ -511,7 +511,7 @@ texture = ExtResource("1_l7i0m")
 centered = false
 hframes = 6
 vframes = 10
-frame = 11
+frame = 39
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
