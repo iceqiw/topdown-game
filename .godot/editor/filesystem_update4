@@ -1,9 +1,9 @@
 res://default_bus_layout.tres
-res://timeline/p1.dch
-res://enemy.tscn
-res://timeline/test1.dtl
-res://world1.tscn
 res://player.tscn
-res://player.gd
-res://timeline/stt1.tres
-res://addons/dialogic/Modules/Text/auto_skip.gd
+res://world1.tscn
+res://enemy.tscn
+res://control.tscn
+res://Scenes/world1.tscn
+res://Scripts/player.gd
+res://global.tscn
+res://Scenes/world2.tscn

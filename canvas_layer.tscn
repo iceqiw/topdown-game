@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://carlmvb8e3uqm"]
 
-[ext_resource type="Script" path="res://canvas_layer.gd" id="1_ltytd"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_ltytd"]
 
 [sub_resource type="Animation" id="Animation_s30ww"]
 length = 0.001

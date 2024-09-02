@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dcpfrl1bvkbfq"]
 
-[ext_resource type="Texture2D" uid="uid://dsjck4p3tqyja" path="res://Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png" id="1_ghrgn"]
-[ext_resource type="Script" path="res://enemy.gd" id="1_tr1bw"]
+[ext_resource type="Texture2D" uid="uid://dsjck4p3tqyja" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png" id="1_ghrgn"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_tr1bw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l4pdc"]
 radius = 6.0

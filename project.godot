@@ -11,16 +11,20 @@ config_version=5
 [application]
 
 config/name="TopDownDemo"
-run/main_scene="res://world1.tscn"
+run/main_scene="res://Scenes/world1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
-gs="*res://global.tscn"
-sm="*res://scene_manager.gd"
+sm="*res://Scripts/scene_manager.gd"
 cct="*res://canvas_layer.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+gs="*res://Scripts/global.gd"
 
 [dialogic]
 
@@ -52,7 +56,7 @@ layout/default_style="res://timeline/stt1.tres"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
