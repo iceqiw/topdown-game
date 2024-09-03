@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://carlmvb8e3uqm"]
 
-[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_ltytd"]
+[ext_resource type="Script" path="res://Scripts/shadow.gd" id="1_burm0"]
 
 [sub_resource type="Animation" id="Animation_s30ww"]
 length = 0.001
@@ -38,9 +38,9 @@ _data = {
 "change": SubResource("Animation_qjj2f")
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="shadow" type="CanvasLayer"]
 layer = 9
-script = ExtResource("1_ltytd")
+script = ExtResource("1_burm0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

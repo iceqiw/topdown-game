@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://ounpjvwdys34"]
+[gd_scene load_steps=29 format=4 uid="uid://ounpjvwdys34"]
 
 [ext_resource type="Script" path="res://Scripts/world1.gd" id="1_s51ks"]
+[ext_resource type="PackedScene" uid="uid://savmmdonnxuw" path="res://Scenes/Items/pick_item.tscn" id="2_cckmr"]
 [ext_resource type="Script" path="res://Scripts/gate_top.gd" id="2_d08xb"]
 [ext_resource type="Script" path="res://Scripts/entry.gd" id="3_4ln1j"]
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="4_xl0ch"]
@@ -11,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://b66iqbcdaxupb" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="9_oter5"]
 [ext_resource type="Texture2D" uid="uid://b0kja3m0qjw1m" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="10_fkuc7"]
 [ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://player.tscn" id="11_43qk5"]
+[ext_resource type="Resource" uid="uid://bh2pkrt8qt0mo" path="res://Scenes/Items/axe.tres" id="12_pmxsa"]
 [ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://enemy.tscn" id="12_tvotc"]
+[ext_resource type="Resource" uid="uid://m15q6apf06q6" path="res://Scenes/Items/inventory.tres" id="13_obo6d"]
 [ext_resource type="PackedScene" uid="uid://cvyrrag07r1eg" path="res://box1.tscn" id="13_rbkw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pwyi"]
@@ -170,6 +173,9 @@ terrain_set_1/terrain_0/color = Color(0.486275, 0.521569, 0.270588, 1)
 sources/0 = SubResource("TileSetAtlasSource_okbmn")
 sources/1 = SubResource("TileSetAtlasSource_jbjwg")
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_8du0n"]
+tile_data = PackedInt32Array(0, 196608, 18)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_il3fb"]
 texture = ExtResource("7_587ia")
 6:8/size_in_atlas = Vector2i(2, 2)
@@ -218,6 +224,9 @@ physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_il3fb")
 sources/1 = SubResource("TileSetAtlasSource_iqmho")
 sources/3 = SubResource("TileSetAtlasSource_85xo2")
+pattern_0 = SubResource("TileMapPattern_8du0n")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_folq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4ht3"]
 texture = ExtResource("10_fkuc7")
@@ -331,6 +340,8 @@ texture = ExtResource("10_fkuc7")
 
 [sub_resource type="TileSet" id="TileSet_04ks8"]
 physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
+physics_layer_1/physics_material = SubResource("PhysicsMaterial_folq5")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.102018, 0.394427, 0.653213, 1)
@@ -376,13 +387,18 @@ script = ExtResource("6_8i5dy")
 [node name="item" type="TileMapLayer" parent="Map"]
 y_sort_enabled = true
 position = Vector2(32, 4)
-tile_map_data = PackedByteArray("AAAHAP3/AAADABIAAAAHAAMAAAAJABIAAAAAAAQAAAAPAAoAAAABAPz/AAAPAAoAAAAKAAEAAAAVAAoAAAAFAPL/AwAKAAUAAAAEAPL/AwAKAAUAAAADAPL/AwAKAAUAAAACAPL/AwAKAAUAAAABAPL/AwAKAAUAAAAAAPL/AwAKAAUAAAD///L/AwAKAAUAAAD+//L/AwAKAAUAAAD9//L/AwAKAAUAAAD8//L/AwAKAAUAAAD7//L/AwAKAAUAAAD6//L/AwAKAAUAAAAIAPL/AwAKAAUAAAAJAPL/AwAKAAUAAAAKAPL/AwAKAAUAAAALAPL/AwAKAAUAAAAMAPL/AwAKAAUAAAANAPL/AwAKAAUAAAD5//L/AwAKAAUAAAD4//L/AwAKAAUAAAD3//L/AwAKAAUAAAD2//L/AwAKAAUAAAD1//L/AwAKAAUAAAD0//L/AwAKAAUAAADz//L/AwAKAAUAAADy//L/AwAKAAUAAADx//L/AwAKAAUAAADw//L/AwAKAAUAAADv//L/AwAKAAUAAADu//L/AwAKAAUAAADt//L/AwAKAAUAAADs//L/AwAKAAUAAADr//L/AwAKAAUAAADq//L/AwAKAAUAAADp//L/AwAKAAUAAADo//L/AwAKAAUAAADn//L/AwAKAAUAAADm//L/AwAKAAUAAAAOAPL/AwAKAAUAAAAPAPL/AwAKAAUAAAAQAPL/AwAKAAUAAAARAPL/AwAKAAUAAAASAPL/AwAKAAUAAAATAPL/AwAKAAUAAAAUAPL/AwAKAAUAAAAVAPL/AwAKAAUAAAAWAPL/AwAKAAUAAAAXAPL/AwAKAAUAAAAYAPL/AwAKAAUAAAAZAPL/AwAKAAUAAAAaAPL/AwAKAAUAAAAbAPL/AwAKAAUAAAAcAPL/AwAKAAUAAAAdAPL/AwAKAAUAAAAeAPL/AwAKAAUAAAAfAPL/AwAKAAUAAAAgAPL/AwAKAAUAAAAhAPL/AwAKAAUAAAAHAPL/AwAKAAUAAAAGAPL/AwAAAAUAAAD6//3/AAAFAA0AAAD4//z/AAAFAA0AAAD3/wAAAAAFAA0AAAA=")
+tile_map_data = PackedByteArray("AAAFAPL/AwAKAAUAAAAEAPL/AwAKAAUAAAADAPL/AwAKAAUAAAACAPL/AwAKAAUAAAABAPL/AwAKAAUAAAAAAPL/AwAKAAUAAAD///L/AwAKAAUAAAD+//L/AwAKAAUAAAD9//L/AwAKAAUAAAD8//L/AwAKAAUAAAD7//L/AwAKAAUAAAD6//L/AwAKAAUAAAAIAPL/AwAKAAUAAAAJAPL/AwAKAAUAAAAKAPL/AwAKAAUAAAALAPL/AwAKAAUAAAAMAPL/AwAKAAUAAAANAPL/AwAKAAUAAAD5//L/AwAKAAUAAAD4//L/AwAKAAUAAAD3//L/AwAKAAUAAAD2//L/AwAKAAUAAAD1//L/AwAKAAUAAAD0//L/AwAKAAUAAADz//L/AwAKAAUAAADy//L/AwAKAAUAAADx//L/AwAKAAUAAADw//L/AwAKAAUAAADv//L/AwAKAAUAAADu//L/AwAKAAUAAADt//L/AwAKAAUAAADs//L/AwAKAAUAAADr//L/AwAKAAUAAADq//L/AwAKAAUAAADp//L/AwAKAAUAAADo//L/AwAKAAUAAADn//L/AwAKAAUAAADm//L/AwAKAAUAAAAOAPL/AwAKAAUAAAAPAPL/AwAKAAUAAAAQAPL/AwAKAAUAAAARAPL/AwAKAAUAAAASAPL/AwAKAAUAAAATAPL/AwAKAAUAAAAUAPL/AwAKAAUAAAAVAPL/AwAKAAUAAAAWAPL/AwAKAAUAAAAXAPL/AwAKAAUAAAAYAPL/AwAKAAUAAAAZAPL/AwAKAAUAAAAaAPL/AwAKAAUAAAAbAPL/AwAKAAUAAAAcAPL/AwAKAAUAAAAdAPL/AwAKAAUAAAAeAPL/AwAKAAUAAAAfAPL/AwAKAAUAAAAgAPL/AwAKAAUAAAAhAPL/AwAKAAUAAAAHAPL/AwAKAAUAAAAGAPL/AwAAAAUAAAD3/wAAAAAFAA0AAAD4//z/AAAFAA0AAAD6//3/AAAFAA0AAAAAAAQAAAAPAAoAAAABAPz/AAAPAAoAAAAHAP3/AAADABIAAAAHAAMAAAAJABIAAAAKAAEAAAAVAAoAAAAMAPn/AAAFAA0AAAANAPX/AAAFAA0AAAAPAPb/AAAFAA0AAAAVAP3/AAAPAAoAAAAWAPX/AAAPAAoAAAAcAPb/AAADABIAAAAcAPz/AAAJABIAAAAfAPr/AAAVAAoAAAA=")
 tile_set = SubResource("TileSet_u75cd")
 
 [node name="water" type="TileMapLayer" parent="Map"]
 y_sort_enabled = true
+position = Vector2(0, 68)
 tile_map_data = PackedByteArray("AADx/wAAAAACAAIAAADx////AAACAAEAAADx//7/AAACAAEAAADx//3/AAACAAEAAADx//z/AAACAAAAAADw/wAAAAABAAIAAADw////AAABAAEAAADw//7/AAABAAEAAADw//3/AAABAAEAAADw//z/AAABAAAAAADv/wAAAAAAAAIAAADv////AAAAAAEAAADv//7/AAAAAAEAAADv//3/AAAAAAEAAADv//z/AAAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAEAAAD5/wMAAAAAAAIAAAD6/wEAAAABAAAAAAD6/wIAAAABAAEAAAD6/wMAAAABAAIAAAD7/wEAAAABAAAAAAD7/wIAAAABAAEAAAD7/wMAAAABAAIAAAD8/wEAAAABAAAAAAD8/wIAAAABAAEAAAD8/wMAAAABAAIAAAD9/wEAAAABAAAAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+/wEAAAACAAAAAAD+/wIAAAACAAEAAAD+/wMAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_04ks8")
+
+[node name="PickItem" parent="Map" instance=ExtResource("2_cckmr")]
+item = ExtResource("12_pmxsa")
+inv = ExtResource("13_obo6d")
 
 [node name="Player" parent="." instance=ExtResource("11_43qk5")]
 texture_filter = 1

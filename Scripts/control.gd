@@ -13,3 +13,5 @@ func _ready() -> void:
 func _update_bar(hp,max_hp):
 	print(max_hp,"max hp")
 	hp_bar.value=hp
+
+		

@@ -2,8 +2,10 @@ class_name Player extends CharacterBody2D
 
 const SPEED = 5000.0
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var control: StatusBar = $CanvasLayer/Control
+@onready var control: StatusBar = $panel/Control
 @onready var effect: AnimationPlayer = $Effect
+
+@export var inventory:Inventory
 
 var is_attacking := false
 var is_idle := true
@@ -18,6 +20,8 @@ var enemy: Enemy
 var health = 100
 signal take_damage(hp)
 
+var is_pause=false
+signal pause
  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -106,3 +110,11 @@ func knockback(enemy_velocity:Vector2):
 func _on_damage_timer_timeout() -> void:
 	damaged_cooldown = true;
 	health+=1
+
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("pause"):
+		#if is_pause==false:
+			#get_tree().paused=true
+		#else :
+			#is_pause=false
+			#get_tree().paused=false

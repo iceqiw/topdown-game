@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://savmmdonnxuw"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_6i5qo"]
+[ext_resource type="Texture2D" uid="uid://3x78uooacj02" path="res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png" id="2_aamvr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h6ei"]
+radius = 20.0998
+
+[node name="PickItem" type="Area2D"]
+script = ExtResource("1_6i5qo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2h6ei")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(2.31818, 1.96154)
+texture = ExtResource("2_aamvr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

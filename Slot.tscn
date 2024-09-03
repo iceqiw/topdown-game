@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ler7hipdkhq"]
+
+[ext_resource type="Script" path="res://slot.gd" id="1_nfhdr"]
+[ext_resource type="Texture2D" uid="uid://dnuau7b1os1je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png" id="1_uuggm"]
+
+[node name="Slot" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nfhdr")
+
+[node name="d" type="Sprite2D" parent="."]
+scale = Vector2(2.25, 2.189)
+texture = ExtResource("1_uuggm")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="dg" type="Sprite2D" parent="CenterContainer/Panel"]
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("1_uuggm")

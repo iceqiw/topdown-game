@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://ixexbs7h7usp"]
+
+[ext_resource type="Texture2D" uid="uid://csokjgsg0psfw" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png" id="1_7ysrq"]
+[ext_resource type="Script" path="res://Scripts/inventory_gui.gd" id="1_jgmta"]
+[ext_resource type="PackedScene" uid="uid://1ler7hipdkhq" path="res://Slot.tscn" id="2_chnlq"]
+
+[node name="InventoryGui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jgmta")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 304.0
+texture = ExtResource("1_7ysrq")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -10.0
+offset_right = 34.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_chnlq")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="s" parent="NinePatchRect/GridContainer" instance=ExtResource("2_chnlq")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_chnlq")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_chnlq")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_chnlq")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_chnlq")]
+layout_mode = 2

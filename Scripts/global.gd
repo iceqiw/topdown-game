@@ -7,8 +7,10 @@ var not_dialogue = true
 
 var dialogue_resource :DialogueResource = preload("res://dialogic/test.dialogue")
 
+
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(_end_d)
+	
 
 func dialogue():
 	if Input.is_action_just_pressed("ui_accept") && not_dialogue:
