@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/box_1.gd" id="2_wv145"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vasxv"]
-radius = 5.09902
+radius = 10.9646
 
 [node name="HitBox" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -14,4 +14,5 @@ script = ExtResource("2_wv145")
 shape = SubResource("CircleShape2D_vasxv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.07143, 1.92857)
 texture = ExtResource("1_iievt")

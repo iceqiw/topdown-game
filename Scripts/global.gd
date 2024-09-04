@@ -15,9 +15,9 @@ func _ready() -> void:
 func dialogue():
 	if Input.is_action_just_pressed("ui_accept") && not_dialogue:
 		not_dialogue =false
-		await DialogueManager.show_example_dialogue_balloon(dialogue_resource,"start")
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource,"start")
 		
 
 func _end_d(res):
-	print("end")
+	print("end",res)
 	not_dialogue=true

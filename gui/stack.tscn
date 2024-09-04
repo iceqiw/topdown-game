@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d02fs0ip7lxij"]
+
+[ext_resource type="Script" path="res://Scripts/slot_stack_gui.gd" id="1_gto54"]
+[ext_resource type="Texture2D" uid="uid://dnuau7b1os1je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png" id="1_nc538"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_gto54")
+
+[node name="item" type="Sprite2D" parent="."]
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("1_nc538")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 25.0
+scale = Vector2(0.6, 0.6)
+text = "1"

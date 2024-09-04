@@ -1,11 +1,10 @@
-[gd_scene load_steps=53 format=3 uid="uid://bdit8lhgq6y0a"]
+[gd_scene load_steps=52 format=3 uid="uid://bdit8lhgq6y0a"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_7wdog"]
 [ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="1_l7i0m"]
-[ext_resource type="Resource" uid="uid://m15q6apf06q6" path="res://Scenes/Items/inventory.tres" id="2_crdur"]
-[ext_resource type="PackedScene" uid="uid://ixexbs7h7usp" path="res://inventory_gui.tscn" id="2_dbkes"]
+[ext_resource type="PackedScene" uid="uid://ixexbs7h7usp" path="res://gui/inventory_gui.tscn" id="2_dbkes"]
 [ext_resource type="Script" path="res://Scripts/panel.gd" id="2_kd8fo"]
-[ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://control.tscn" id="3_d8qd1"]
+[ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://gui/control.tscn" id="3_d8qd1"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_i3160"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vxwne"]
@@ -14,6 +13,7 @@ radius = 7.0
 [sub_resource type="Animation" id="Animation_w8k7k"]
 resource_name = "attack_down"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,6 +31,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_7n3wo"]
 resource_name = "attack_left"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -60,6 +61,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_4tyj4"]
 resource_name = "attack_right"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -89,6 +91,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_m5qju"]
 resource_name = "attack_up"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -413,24 +416,20 @@ advance_expression = "is_idle && not is_attacking"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2agt3"]
-priority = 0
 advance_mode = 2
-advance_expression = "is_attacking && not is_idle"
+advance_expression = "is_attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kycid"]
-priority = 0
 advance_mode = 2
-advance_expression = "is_attacking and not is_moving"
+advance_expression = "is_attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xbvlr"]
-switch_mode = 2
 advance_mode = 2
-advance_expression = "is_idle and not is_moving"
+advance_expression = "is_idle and not is_attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_286va"]
-switch_mode = 2
 advance_mode = 2
-advance_expression = "is_moving and not is_idle"
+advance_expression = "is_moving and not is_attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3uxjj"]
 advance_mode = 2
@@ -493,25 +492,24 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
+slide_on_ceiling = false
 script = ExtResource("1_7wdog")
-inventory = ExtResource("2_crdur")
 
 [node name="panel" type="CanvasLayer" parent="."]
 process_mode = 3
+layer = 3
 script = ExtResource("2_kd8fo")
 
-[node name="InventoryGui" parent="panel" instance=ExtResource("2_dbkes")]
-offset_left = 364.0
-offset_top = 156.0
-offset_right = 875.0
-offset_bottom = 457.0
-inventory = ExtResource("2_crdur")
-
 [node name="Control" parent="panel" instance=ExtResource("3_d8qd1")]
-offset_left = 5.0
-offset_top = 4.0
-offset_right = -1019.0
-offset_bottom = -639.0
+
+[node name="InventoryGui" parent="panel" instance=ExtResource("2_dbkes")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.5
+offset_right = 136.5
+offset_bottom = 45.0
+grow_horizontal = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vxwne")
@@ -524,7 +522,7 @@ texture = ExtResource("1_l7i0m")
 centered = false
 hframes = 6
 vframes = 10
-frame = 8
+frame = 11
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
@@ -555,7 +553,6 @@ shape = SubResource("CircleShape2D_2im6j")
 [node name="damaged_timer" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-46, -33)
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0

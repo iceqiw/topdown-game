@@ -1,7 +1,7 @@
-[gd_scene load_steps=29 format=4 uid="uid://ounpjvwdys34"]
+[gd_scene load_steps=28 format=4 uid="uid://ounpjvwdys34"]
 
 [ext_resource type="Script" path="res://Scripts/world1.gd" id="1_s51ks"]
-[ext_resource type="PackedScene" uid="uid://savmmdonnxuw" path="res://Scenes/Items/pick_item.tscn" id="2_cckmr"]
+[ext_resource type="PackedScene" uid="uid://savmmdonnxuw" path="res://pick_item.tscn" id="2_cckmr"]
 [ext_resource type="Script" path="res://Scripts/gate_top.gd" id="2_d08xb"]
 [ext_resource type="Script" path="res://Scripts/entry.gd" id="3_4ln1j"]
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="4_xl0ch"]
@@ -12,9 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b66iqbcdaxupb" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="9_oter5"]
 [ext_resource type="Texture2D" uid="uid://b0kja3m0qjw1m" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="10_fkuc7"]
 [ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://player.tscn" id="11_43qk5"]
-[ext_resource type="Resource" uid="uid://bh2pkrt8qt0mo" path="res://Scenes/Items/axe.tres" id="12_pmxsa"]
+[ext_resource type="Resource" uid="uid://bh2pkrt8qt0mo" path="res://resource/Items/axe.tres" id="12_agfpo"]
 [ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://enemy.tscn" id="12_tvotc"]
-[ext_resource type="Resource" uid="uid://m15q6apf06q6" path="res://Scenes/Items/inventory.tres" id="13_obo6d"]
 [ext_resource type="PackedScene" uid="uid://cvyrrag07r1eg" path="res://box1.tscn" id="13_rbkw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pwyi"]
@@ -396,9 +395,21 @@ position = Vector2(0, 68)
 tile_map_data = PackedByteArray("AADx/wAAAAACAAIAAADx////AAACAAEAAADx//7/AAACAAEAAADx//3/AAACAAEAAADx//z/AAACAAAAAADw/wAAAAABAAIAAADw////AAABAAEAAADw//7/AAABAAEAAADw//3/AAABAAEAAADw//z/AAABAAAAAADv/wAAAAAAAAIAAADv////AAAAAAEAAADv//7/AAAAAAEAAADv//3/AAAAAAEAAADv//z/AAAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAEAAAD5/wMAAAAAAAIAAAD6/wEAAAABAAAAAAD6/wIAAAABAAEAAAD6/wMAAAABAAIAAAD7/wEAAAABAAAAAAD7/wIAAAABAAEAAAD7/wMAAAABAAIAAAD8/wEAAAABAAAAAAD8/wIAAAABAAEAAAD8/wMAAAABAAIAAAD9/wEAAAABAAAAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD+/wEAAAACAAAAAAD+/wIAAAACAAEAAAD+/wMAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_04ks8")
 
-[node name="PickItem" parent="Map" instance=ExtResource("2_cckmr")]
-item = ExtResource("12_pmxsa")
-inv = ExtResource("13_obo6d")
+[node name="Pick" type="Node" parent="Map"]
+
+[node name="PickItem" parent="Map/Pick" instance=ExtResource("2_cckmr")]
+position = Vector2(432, 236)
+item = ExtResource("12_agfpo")
+
+[node name="PickItem2" parent="Map/Pick" instance=ExtResource("2_cckmr")]
+position = Vector2(568, 400)
+
+[node name="PickItem3" parent="Map/Pick" instance=ExtResource("2_cckmr")]
+position = Vector2(571.5, 128)
+item = ExtResource("12_agfpo")
+
+[node name="PickItem4" parent="Map/Pick" instance=ExtResource("2_cckmr")]
+position = Vector2(336, 288)
 
 [node name="Player" parent="." instance=ExtResource("11_43qk5")]
 texture_filter = 1
@@ -409,5 +420,6 @@ position = Vector2(672, 253)
 
 [node name="HitBox" parent="." instance=ExtResource("13_rbkw7")]
 position = Vector2(336, 128)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Map/gate_top" to="Map/gate_top" method="_on_body_entered"]

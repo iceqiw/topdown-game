@@ -8,11 +8,6 @@ signal hit(x)
 func _ready() -> void:
 	hit.connect(_hitted)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _hitted(x):
 	velocity = x * 100
 	move_and_slide()

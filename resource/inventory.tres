@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=9 format=3 uid="uid://m7bnq7xfgm88"]
+
+[ext_resource type="Script" path="res://Scripts/inventory_res.gd" id="1_3ogin"]
+[ext_resource type="Script" path="res://Scripts/inventory_stack.gd" id="2_rea0a"]
+
+[sub_resource type="Resource" id="Resource_fsgao"]
+script = ExtResource("2_rea0a")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_w2idx"]
+script = ExtResource("2_rea0a")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_sd0fo"]
+script = ExtResource("2_rea0a")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_mvpah"]
+script = ExtResource("2_rea0a")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_4nfaq"]
+script = ExtResource("2_rea0a")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_dfc78"]
+script = ExtResource("2_rea0a")
+amount = 0
+
+[resource]
+script = ExtResource("1_3ogin")
+stacks = Array[ExtResource("2_rea0a")]([SubResource("Resource_fsgao"), SubResource("Resource_w2idx"), SubResource("Resource_sd0fo"), SubResource("Resource_mvpah"), SubResource("Resource_4nfaq"), SubResource("Resource_dfc78")])

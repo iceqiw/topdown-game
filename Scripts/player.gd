@@ -5,8 +5,6 @@ const SPEED = 5000.0
 @onready var control: StatusBar = $panel/Control
 @onready var effect: AnimationPlayer = $Effect
 
-@export var inventory:Inventory
-
 var is_attacking := false
 var is_idle := true
 var is_moving := false
@@ -21,19 +19,15 @@ var health = 100
 signal take_damage(hp)
 
 var is_pause=false
-signal pause
  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	take_damage.connect(_deal_on_damage)
 	
-
-
 func _physics_process(delta: float) -> void:
 	move(delta)
 	attack()
 	gs.dialogue() 
-
 
 func update_direction() -> Vector2:
 	return Input.get_vector("left", "right", "up", "down")
@@ -45,7 +39,7 @@ func move(delta: float) -> void:
 		is_moving = false
 		is_attacking=false
 		velocity = Vector2.ZERO
-	else:
+	elif !is_attacking:
 		velocity = input_direction * SPEED * delta
 		player_direction = input_direction.normalized()
 		animation_tree.set("parameters/idle/blend_position", player_direction)
@@ -53,8 +47,7 @@ func move(delta: float) -> void:
 		animation_tree.set("parameters/attack/blend_position", player_direction)
 		is_idle = false
 		is_moving = true
-		if !is_attacking:
-			move_and_slide()
+		move_and_slide()
 
 
 func _on_p_hitbox_body_entered(body: Node2D) -> void:
