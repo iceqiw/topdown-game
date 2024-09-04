@@ -522,7 +522,7 @@ texture = ExtResource("1_l7i0m")
 centered = false
 hframes = 6
 vframes = 10
-frame = 11
+frame = 9
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)

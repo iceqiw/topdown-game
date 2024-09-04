@@ -1,8 +1,6 @@
-res://gui/inventory_gui.tscn
-res://resource/inventory.tres
-res://player.tscn
 res://pick_item.tscn
-res://Scripts/inventory_gui.gd
-res://resource/Items/sword.tres
+res://resource/inventory.tres
+res://gui/inventory_gui.tscn
+res://Scripts/player.gd
+res://player.tscn
 res://Scenes/world1.tscn
-res://Scripts/pick_item_gui.gd
