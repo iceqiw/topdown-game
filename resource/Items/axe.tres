@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryThings" load_steps=3 format=3 uid="uid://bh2pkrt8qt0mo"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_item_res.gd" id="1_73pd1"]
+[ext_resource type="Script" path="res://Scripts/gui/resource/inventory_item_res.gd" id="1_73pd1"]
 [ext_resource type="Texture2D" uid="uid://3x78uooacj02" path="res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png" id="2_lji16"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d02fs0ip7lxij"]
 
-[ext_resource type="Script" path="res://Scripts/slot_stack_gui.gd" id="1_gto54"]
+[ext_resource type="Script" path="res://Scripts/gui/slot_stack_gui.gd" id="1_gto54"]
 [ext_resource type="Texture2D" uid="uid://dnuau7b1os1je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png" id="1_nc538"]
 
 [node name="Panel" type="Panel"]

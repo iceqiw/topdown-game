@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgvmyjlifkjhx"]
 
-[ext_resource type="Script" path="res://Scripts/control.gd" id="1_yn6jg"]
+[ext_resource type="Script" path="res://Scripts/gui/control.gd" id="1_yn6jg"]
 [ext_resource type="Texture2D" uid="uid://2q3lux1d2vhe" path="res://Assets/Ninja Adventure - Asset Pack/Ui/LifeBarMiniProgress.png" id="2_f4ahr"]
 [ext_resource type="Texture2D" uid="uid://bhp7v3hmjy1f2" path="res://Assets/Ninja Adventure - Asset Pack/Ui/LifeBarMiniUnder.png" id="2_irtmk"]
 [ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="2_lpuen"]

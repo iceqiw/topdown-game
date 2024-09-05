@@ -1,32 +1,32 @@
 [gd_resource type="Resource" script_class="Inventory" load_steps=9 format=3 uid="uid://m7bnq7xfgm88"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_res.gd" id="1_3ogin"]
-[ext_resource type="Script" path="res://Scripts/inventory_stack.gd" id="2_rea0a"]
+[ext_resource type="Script" path="res://Scripts/gui/resource/inventory_res.gd" id="1_d8idf"]
+[ext_resource type="Script" path="res://Scripts/gui/resource/inventory_stack.gd" id="2_6x244"]
 
 [sub_resource type="Resource" id="Resource_vci4w"]
-script = ExtResource("2_rea0a")
+script = ExtResource("2_6x244")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_e71tu"]
-script = ExtResource("2_rea0a")
+script = ExtResource("2_6x244")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_o6bvb"]
-script = ExtResource("2_rea0a")
+script = ExtResource("2_6x244")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_354gx"]
-script = ExtResource("2_rea0a")
+script = ExtResource("2_6x244")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_5gpai"]
-script = ExtResource("2_rea0a")
+script = ExtResource("2_6x244")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_a7e1j"]
-script = ExtResource("2_rea0a")
+script = ExtResource("2_6x244")
 amount = 0
 
 [resource]
-script = ExtResource("1_3ogin")
-stacks = Array[ExtResource("2_rea0a")]([SubResource("Resource_vci4w"), SubResource("Resource_e71tu"), SubResource("Resource_o6bvb"), SubResource("Resource_354gx"), SubResource("Resource_5gpai"), SubResource("Resource_a7e1j")])
+script = ExtResource("1_d8idf")
+stacks = Array[ExtResource("2_6x244")]([SubResource("Resource_vci4w"), SubResource("Resource_e71tu"), SubResource("Resource_o6bvb"), SubResource("Resource_354gx"), SubResource("Resource_5gpai"), SubResource("Resource_a7e1j")])

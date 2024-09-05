@@ -1,25 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://1ler7hipdkhq"]
+[gd_scene load_steps=4 format=3 uid="uid://ptkdotg56a2w"]
 
-[ext_resource type="Script" path="res://Scripts/slot.gd" id="1_nfhdr"]
-[ext_resource type="Texture2D" uid="uid://dnuau7b1os1je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png" id="1_uuggm"]
-[ext_resource type="PackedScene" uid="uid://d1vv5gwe8jnew" path="res://citem.tscn" id="3_rjnp7"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory_slot_gui.gd" id="1_nfhdr"]
+[ext_resource type="Texture2D" uid="uid://dbf6ls6mb65ip" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeDark/nine_path_panel.png" id="2_8stde"]
+[ext_resource type="Script" path="res://Scripts/gui/stats.gd" id="3_oubu5"]
 
-[node name="Slot" type="Button"]
+[node name="Slot" type="PanelContainer"]
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_nfhdr")
 
-[node name="bg" type="Sprite2D" parent="."]
-scale = Vector2(2.25, 2.189)
-texture = ExtResource("1_uuggm")
-centered = false
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="item" parent="CenterContainer" instance=ExtResource("3_rjnp7")]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
+texture = ExtResource("2_8stde")
+script = ExtResource("3_oubu5")
+
+[node name="debug" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8

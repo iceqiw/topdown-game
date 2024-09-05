@@ -1,10 +1,10 @@
 98a70190bc03ec62debef81a9418c486
-::res://::1725444065
+::res://::1725531565
 box1.tscn::PackedScene::6297414707703903134::1725436134::0::1::::<><>::uid://baqwvei62xvg6::::res://Assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png<>res://Scripts/box_1.gd
 enemy.tscn::PackedScene::7330939966122139390::1725432438::0::1::::<><>::uid://dsjck4p3tqyja::::res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png<>res://Scripts/enemy.gd
 icon.svg::CompressedTexture2D::873195098242756865::1724311291::1725259934::1::::<><>::
-pick_item.tscn::PackedScene::1264696307428158930::1725443973::0::1::::<><>::res://Scripts/pick_item_gui.gd<>uid://d2d6hgcof8b2r::::res://resource/Items/sword.tres<>uid://m7bnq7xfgm88::::res://resource/inventory.tres
-player.tscn::PackedScene::2614715379566824234::1725443931::0::1::::<><>::res://Scripts/player.gd<>uid://bni1dab3wbnns::::res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png<>uid://ixexbs7h7usp::::res://gui/inventory_gui.tscn<>res://Scripts/panel.gd<>uid://cgvmyjlifkjhx::::res://gui/control.tscn<>res://Scripts/camera_2d.gd
+pick_item.tscn::PackedScene::1264696307428158930::1725444313::0::1::::<><>::res://Scripts/pick_item_gui.gd<>uid://d2d6hgcof8b2r::::res://resource/Items/sword.tres<>uid://m7bnq7xfgm88::::res://resource/inventory.tres
+player.tscn::PackedScene::2614715379566824234::1725531399::0::1::::<><>::res://Scripts/player.gd<>uid://bni1dab3wbnns::::res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png<>uid://ixexbs7h7usp::::res://gui/inventory_gui.tscn<>res://Scripts/panel.gd<>uid://cgvmyjlifkjhx::::res://gui/control.tscn<>res://Scripts/camera_2d.gd
 README.md::TextFile::-1::1724850803::0::1::::<><>::
 ::res://addons/::1725260428
 ::res://addons/dialogue_manager/::1725009091
@@ -2132,42 +2132,43 @@ nine_path_panel.png::CompressedTexture2D::244236183085156018::1713448404::172525
 nine_path_panel.png::CompressedTexture2D::9050257433295332855::1713449522::1725255360::1::::<><>::
 ::res://dialogic/::1725270103
 test.dialogue::Resource::7893597918134586959::1725270103::1725270103::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-::res://gui/::1725443931
-control.tscn::PackedScene::5238098315090135433::1725433433::0::1::::<><>::res://Scripts/control.gd<>uid://2q3lux1d2vhe::::res://Assets/Ninja Adventure - Asset Pack/Ui/LifeBarMiniProgress.png<>uid://bhp7v3hmjy1f2::::res://Assets/Ninja Adventure - Asset Pack/Ui/LifeBarMiniUnder.png<>uid://bni1dab3wbnns::::res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png
-inventory_gui.tscn::PackedScene::609275460472911411::1725443931::0::1::::<><>::uid://csokjgsg0psfw::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png<>res://Scripts/inventory_gui.gd<>uid://ptkdotg56a2w::::res://gui/Slot.tscn<>uid://m7bnq7xfgm88::::res://resource/inventory.tres
-inventory_slot.tscn::PackedScene::1847893008295442286::1725437276::0::1::::<><>::res://Scripts/slot.gd<>uid://dnuau7b1os1je::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png<>uid://d1vv5gwe8jnew::::res://citem.tscn
-shadow.tscn::PackedScene::4808626211693504124::1725359304::0::1::::<><>::res://Scripts/shadow.gd
-Slot.tscn::PackedScene::1092669124199108740::1725442165::0::1::::<><>::res://Scripts/inventory_slot_gui.gd<>uid://dnuau7b1os1je::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png
-stack.tscn::PackedScene::8970058396810789421::1725442165::0::1::::<><>::res://Scripts/slot_stack_gui.gd<>uid://dnuau7b1os1je::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png
-::res://resource/::1725443217
-inventory.tres::Resource/Inventory::908411034959122451::1725443217::0::1::::<><>::res://Scripts/inventory_res.gd<>res://Scripts/inventory_stack.gd
-::res://resource/Items/::1725443559
-axe.tres::Resource/InventoryThings::2934410325119250434::1725435406::0::1::::<><>::res://Scripts/inventory_item_res.gd<>uid://3x78uooacj02::::res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png
-sword.tres::Resource/InventoryItem::9062449008775237955::1725443559::0::1::::<><>::res://Scripts/inventory_item_res.gd<>uid://pjlld6t3uupu::::res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword/Sprite.png
-::res://Scenes/::1725444028
-world1.tscn::PackedScene::1024747979983783821::1725444028::0::1::::<><>::res://Scripts/world1.gd<>uid://savmmdonnxuw::::res://pick_item.tscn<>res://Scripts/gate_top.gd<>res://Scripts/entry.gd<>uid://d1p3kojnvmabd::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png<>uid://fh3wo4nxppo3::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetRelief.png<>res://Scripts/ground.gd<>uid://ctdqbtpahfo4k::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png<>uid://dxxkryxftjr8k::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetVillageAbandoned.png<>uid://b66iqbcdaxupb::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png<>uid://b0kja3m0qjw1m::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png<>uid://bdit8lhgq6y0a::::res://player.tscn<>uid://bh2pkrt8qt0mo::::res://resource/Items/axe.tres<>uid://dcpfrl1bvkbfq::::res://enemy.tscn<>uid://cvyrrag07r1eg::::res://box1.tscn
+::res://gui/::1725531525
+control.tscn::PackedScene::5238098315090135433::1725526562::0::1::::<><>::res://Scripts/gui/control.gd<>uid://2q3lux1d2vhe::::res://Assets/Ninja Adventure - Asset Pack/Ui/LifeBarMiniProgress.png<>uid://bhp7v3hmjy1f2::::res://Assets/Ninja Adventure - Asset Pack/Ui/LifeBarMiniUnder.png<>uid://bni1dab3wbnns::::res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png
+inventory_gui.tscn::PackedScene::609275460472911411::1725531525::0::1::::<><>::uid://csokjgsg0psfw::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png<>res://Scripts/gui/inventory_gui.gd<>uid://ptkdotg56a2w::::res://gui/inventory_slot.tscn<>uid://m7bnq7xfgm88::::res://resource/inventory.tres
+inventory_slot.tscn::PackedScene::1092669124199108740::1725531373::0::1::::<><>::res://Scripts/gui/inventory_slot_gui.gd<>uid://dbf6ls6mb65ip::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeDark/nine_path_panel.png<>res://Scripts/gui/stats.gd
+shadow.tscn::PackedScene::4808626211693504124::1725528886::0::1::::<><>::res://Scripts/shadow.gd
+stack.tscn::PackedScene::8970058396810789421::1725528886::0::1::::<><>::res://Scripts/gui/slot_stack_gui.gd<>uid://dnuau7b1os1je::::res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png
+::res://resource/::1725531121
+inventory.tres::Resource/Inventory::908411034959122451::1725531121::0::1::::<><>::res://Scripts/gui/resource/inventory_res.gd<>res://Scripts/gui/resource/inventory_stack.gd
+::res://resource/Items/::1725526729
+axe.tres::Resource/InventoryThings::2934410325119250434::1725526729::0::1::::<><>::res://Scripts/gui/resource/inventory_item_res.gd<>uid://3x78uooacj02::::res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png
+sword.tres::Resource/InventoryItem::9062449008775237955::1725526729::0::1::::<><>::res://Scripts/gui/resource/inventory_item_res.gd<>uid://pjlld6t3uupu::::res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Sword/Sprite.png
+::res://Scenes/::1725444525
+world1.tscn::PackedScene::1024747979983783821::1725444525::0::1::::<><>::res://Scripts/world1.gd<>uid://savmmdonnxuw::::res://pick_item.tscn<>res://Scripts/gate_top.gd<>res://Scripts/entry.gd<>uid://d1p3kojnvmabd::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png<>uid://fh3wo4nxppo3::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetRelief.png<>res://Scripts/ground.gd<>uid://ctdqbtpahfo4k::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png<>uid://dxxkryxftjr8k::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetVillageAbandoned.png<>uid://b66iqbcdaxupb::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png<>uid://b0kja3m0qjw1m::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png<>uid://bdit8lhgq6y0a::::res://player.tscn<>uid://bh2pkrt8qt0mo::::res://resource/Items/axe.tres<>uid://dcpfrl1bvkbfq::::res://enemy.tscn<>uid://cvyrrag07r1eg::::res://box1.tscn
 world2.tscn::PackedScene::9216539811195462086::1725433433::0::1::::<><>::uid://d86ddpudpjhk::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png<>res://Scripts/world2.gd<>uid://bdit8lhgq6y0a::::res://player.tscn<>uid://cnik21pvjhbi0::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorB.png<>uid://ctdqbtpahfo4k::::res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png<>res://Scripts/entry.gd<>res://Scripts/gate.gd<>res://Scripts/ground.gd<>uid://dcpfrl1bvkbfq::::res://enemy.tscn
-::res://Scripts/::1725443738
+::res://Scripts/::1725526642
 base_scene.gd::GDScript::-1::1725178472::0::1::::BaseScene<>Node<>::
 box_1.gd::GDScript::-1::1725441884::0::1::::HitBox<>CharacterBody2D<>::
 camera_2d.gd::GDScript::-1::1725178405::0::1::::<>Camera2D<>::
-control.gd::GDScript::-1::1725353007::0::1::::StatusBar<>Control<>::
-enemy.gd::GDScript::-1::1725181149::0::1::::Enemy<>CharacterBody2D<>::
+enemy.gd::GDScript::-1::1725520569::0::1::::Enemy<>CharacterBody2D<>::
 entry.gd::GDScript::-1::1725085828::0::1::::EntryPoint<>Marker2D<>::
 gate.gd::GDScript::-1::1725009024::0::1::::<>Area2D<>::
 gate_top.gd::GDScript::-1::1725010159::0::1::::<>Area2D<>::
 global.gd::GDScript::-1::1725441878::0::1::::<>Node<>::
 ground.gd::GDScript::-1::1725178477::0::1::::Ground<>TileMapLayer<>::
-inventory_gui.gd::GDScript::-1::1725443385::0::1::::PlayerInv<>Control<>::
-inventory_item_res.gd::GDScript::-1::1725435412::0::1::::InventoryItem<>Resource<>::
-inventory_res.gd::GDScript::-1::1725437121::0::1::::Inventory<>Resource<>::
-inventory_slot_gui.gd::GDScript::-1::1725440456::0::1::::SlotGui<>Button<>::
-inventory_stack.gd::GDScript::-1::1725435660::0::1::::InventoryStack<>Resource<>::
-panel.gd::GDScript::-1::1725441814::0::1::::PlayerPanel<>CanvasLayer<>::
-pick_item_gui.gd::GDScript::-1::1725443738::0::1::::PickItemGui<>Area2D<>::
-player.gd::GDScript::-1::1725442017::0::1::::Player<>CharacterBody2D<>::
+panel.gd::GDScript::-1::1725526606::0::1::::PlayerPanel<>CanvasLayer<>::
+pick_item_gui.gd::GDScript::-1::1725525914::0::1::::PickItemGui<>Area2D<>::
+player.gd::GDScript::-1::1725444385::0::1::::Player<>CharacterBody2D<>::
 scene_manager.gd::GDScript::-1::1725178461::0::1::::SceneManger<>Node<>::
 shadow.gd::GDScript::-1::1725178467::0::1::::Cly<>CanvasLayer<>::
-slot_stack_gui.gd::GDScript::-1::1725440043::0::1::::SlotStackGui<>Panel<>::
 world1.gd::GDScript::-1::1725358928::0::1::::<>BaseScene<>::
 world2.gd::GDScript::-1::1725007592::0::1::::<>BaseScene<>::
+::res://Scripts/gui/::1725531525
+control.gd::GDScript::-1::1725526670::0::1::::StatusBar<>Control<>::
+inventory_gui.gd::GDScript::-1::1725526280::0::1::::PlayerInv<>Control<>::
+inventory_slot_gui.gd::GDScript::-1::1725531525::0::1::::SlotGui<>PanelContainer<>::
+stats.gd::GDScript::-1::1725530784::0::1::::SlotTexture<>TextureRect<>::
+::res://Scripts/gui/resource/::1725526756
+inventory_item_res.gd::GDScript::-1::1725526430::0::1::::InventoryItem<>Resource<>::
+inventory_res.gd::GDScript::-1::1725525991::0::1::::Inventory<>Resource<>::
+inventory_stack.gd::GDScript::-1::1725528965::0::1::::InventoryStack<>Resource<>::
