@@ -1,6 +1,0 @@
-res://gui/inventory_gui.tscn
-res://resource/inventory.tres
-res://player.tscn
-res://gui/inventory_slot.tscn
-res://Scripts/gui/inventory_slot_gui.gd
-res://Scripts/gui/resource/inventory_stack.gd
