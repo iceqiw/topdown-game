@@ -522,7 +522,7 @@ texture = ExtResource("1_l7i0m")
 centered = false
 hframes = 6
 vframes = 10
-frame = 6
+frame = 10
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
@@ -553,6 +553,7 @@ shape = SubResource("CircleShape2D_2im6j")
 [node name="damaged_timer" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0

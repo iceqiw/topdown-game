@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/world1.gd" id="1_s51ks"]
 [ext_resource type="PackedScene" uid="uid://savmmdonnxuw" path="res://pick_item.tscn" id="2_cckmr"]
-[ext_resource type="Script" path="res://Scripts/gate_top.gd" id="2_d08xb"]
+[ext_resource type="Script" path="res://Scripts/gate.gd" id="2_d08xb"]
 [ext_resource type="Script" path="res://Scripts/entry.gd" id="3_4ln1j"]
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="4_xl0ch"]
 [ext_resource type="Texture2D" uid="uid://fh3wo4nxppo3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetRelief.png" id="5_4llqq"]
@@ -364,8 +364,8 @@ polygon = PackedVector2Array(-288, -104, -288, 432, 688, 432, 688, -168, 744, -1
 [node name="gate_top" type="Area2D" parent="Map"]
 position = Vector2(168, -77)
 script = ExtResource("2_d08xb")
-path = "res://Scenes/world2.tscn"
-entry_point = "entry"
+scene = "world2"
+entry_point = "entry2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/gate_top"]
 position = Vector2(-32, -128)

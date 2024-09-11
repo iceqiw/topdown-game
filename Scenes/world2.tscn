@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnik21pvjhbi0" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorB.png" id="2_u30j2"]
 [ext_resource type="Texture2D" uid="uid://ctdqbtpahfo4k" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_3hm15"]
 [ext_resource type="Script" path="res://Scripts/entry.gd" id="4_akf8j"]
-[ext_resource type="Script" path="res://Scripts/gate.gd" id="5_b8p4c"]
+[ext_resource type="Script" path="res://Scripts/gate.gd" id="6_g4sf3"]
 [ext_resource type="Script" path="res://Scripts/ground.gd" id="7_vttqn"]
 [ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://enemy.tscn" id="8_l1i8m"]
 
@@ -131,16 +131,16 @@ tile_set = SubResource("TileSet_imefe")
 
 [node name="gate" type="Area2D" parent="Map"]
 position = Vector2(114, 343)
-script = ExtResource("5_b8p4c")
-path = "res://Scenes/world1.tscn"
+script = ExtResource("6_g4sf3")
+scene = "world1"
 entry_point = "entry1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/gate"]
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_w0wbk")
 
-[node name="entry" type="Marker2D" parent="Map/gate"]
-position = Vector2(-1, -29)
+[node name="entry2" type="Marker2D" parent="Map/gate"]
+position = Vector2(6, -50)
 script = ExtResource("4_akf8j")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -151,7 +151,7 @@ position = Vector2(-12, 6)
 polygon = PackedVector2Array(-281, -110, 618, -106, 620, 419, -276, 419, -301, 444, 641, 441, 651, -133, -303, -123, -307, 445, -278, 413)
 
 [node name="Player" parent="." instance=ExtResource("2_qbig2")]
-position = Vector2(133, 214)
+position = Vector2(122, 43)
 
 [node name="enemy" parent="." instance=ExtResource("8_l1i8m")]
 position = Vector2(387, 61)
