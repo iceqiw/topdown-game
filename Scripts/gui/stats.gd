@@ -11,7 +11,6 @@ extends TextureRect
 @onready var property: Dictionary = {"TEXTURE": texture, "CC": cc, "SLOT_TYPE": slot_type}:
 	set(value):
 		property = value
-		
 		texture = value["TEXTURE"]
 		cc = value["CC"]
 		slot_type = value["SLOT_TYPE"]
