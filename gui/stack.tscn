@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d02fs0ip7lxij"]
+[gd_scene load_steps=3 format=3 uid="uid://cxwryiaotm7ah"]
 
-[ext_resource type="Script" path="res://Scripts/gui/slot_stack_gui.gd" id="1_gto54"]
-[ext_resource type="Texture2D" uid="uid://dnuau7b1os1je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png" id="1_nc538"]
+[ext_resource type="Script" path="res://Scripts/gui/stats.gd" id="1_bwolr"]
+[ext_resource type="Texture2D" uid="uid://dnuau7b1os1je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/ThemeWood/inventory_cell.png" id="2_y05fr"]
 
 [node name="Panel" type="Panel"]
-script = ExtResource("1_gto54")
+script = ExtResource("1_bwolr")
 
 [node name="item" type="Sprite2D" parent="."]
 scale = Vector2(2.25, 2.25)
-texture = ExtResource("1_nc538")
+texture = ExtResource("2_y05fr")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

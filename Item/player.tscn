@@ -1,11 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://bdit8lhgq6y0a"]
+[gd_scene load_steps=51 format=3 uid="uid://bdit8lhgq6y0a"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_7wdog"]
-[ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="1_l7i0m"]
-[ext_resource type="PackedScene" uid="uid://ixexbs7h7usp" path="res://gui/inventory_gui.tscn" id="2_dbkes"]
-[ext_resource type="Script" path="res://Scripts/panel.gd" id="2_kd8fo"]
-[ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://gui/control.tscn" id="3_d8qd1"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_i3160"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wkerc"]
+[ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://Gui/control.tscn" id="2_npdrl"]
+[ext_resource type="PackedScene" uid="uid://ixexbs7h7usp" path="res://Gui/inventory/inventory_gui.tscn" id="3_o6wph"]
+[ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="4_js8p0"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="5_crsye"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vxwne"]
 radius = 7.0
@@ -493,16 +492,15 @@ _data = {
 
 [node name="player" type="CharacterBody2D"]
 slide_on_ceiling = false
-script = ExtResource("1_7wdog")
+script = ExtResource("1_wkerc")
 
 [node name="panel" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 3
-script = ExtResource("2_kd8fo")
 
-[node name="Control" parent="panel" instance=ExtResource("3_d8qd1")]
+[node name="Control" parent="panel" instance=ExtResource("2_npdrl")]
 
-[node name="InventoryGui" parent="panel" instance=ExtResource("2_dbkes")]
+[node name="InventoryGui" parent="panel" instance=ExtResource("3_o6wph")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -518,11 +516,11 @@ one_way_collision_margin = 0.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
 position = Vector2(-24, -40)
-texture = ExtResource("1_l7i0m")
+texture = ExtResource("4_js8p0")
 centered = false
 hframes = 6
 vframes = 10
-frame = 10
+frame = 11
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
@@ -560,7 +558,7 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 position_smoothing_enabled = true
-script = ExtResource("4_i3160")
+script = ExtResource("5_crsye")
 
 [node name="Effect" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://savmmdonnxuw"]
 
-[ext_resource type="Script" path="res://Scripts/pick_item_gui.gd" id="1_v2xus"]
+[ext_resource type="Script" path="res://Scripts/map/item/pick_item_gui.gd" id="1_v2xus"]
 [ext_resource type="Resource" uid="uid://d2d6hgcof8b2r" path="res://resource/Items/sword.tres" id="2_2tuix"]
 [ext_resource type="Resource" uid="uid://m7bnq7xfgm88" path="res://resource/inventory.tres" id="3_3hwyl"]
 

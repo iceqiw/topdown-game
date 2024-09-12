@@ -21,8 +21,7 @@ buses/default_bus_layout=""
 
 [autoload]
 
-sm="*res://Scripts/scene_handle.gd"
-cct="*res://gui/shadow.tscn"
+sm="*res://Scripts/scene/scene_handle.gd"
 gs="*res://Scripts/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneManager="*res://addons/scene_manager/scene_manager.tscn"

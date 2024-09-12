@@ -103,11 +103,3 @@ func knockback(enemy_velocity:Vector2):
 func _on_damage_timer_timeout() -> void:
 	damaged_cooldown = true;
 	health+=1
-
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("pause"):
-		#if is_pause==false:
-			#get_tree().paused=true
-		#else :
-			#is_pause=false
-			#get_tree().paused=false

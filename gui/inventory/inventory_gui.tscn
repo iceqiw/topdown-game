@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csokjgsg0psfw" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png" id="1_7ysrq"]
 [ext_resource type="Script" path="res://Scripts/gui/inventory_gui.gd" id="1_jgmta"]
-[ext_resource type="PackedScene" uid="uid://ptkdotg56a2w" path="res://gui/inventory_slot.tscn" id="2_chnlq"]
+[ext_resource type="PackedScene" uid="uid://ptkdotg56a2w" path="res://Gui/inventory/inventory_slot.tscn" id="2_chnlq"]
 [ext_resource type="Resource" uid="uid://m7bnq7xfgm88" path="res://resource/inventory.tres" id="2_i5kci"]
 
 [node name="InventoryGui" type="Control"]

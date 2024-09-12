@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=4 uid="uid://d4ktcge3xac3w"]
 
 [ext_resource type="Texture2D" uid="uid://d86ddpudpjhk" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_ctk0h"]
-[ext_resource type="Script" path="res://Scripts/world2.gd" id="1_iaxo3"]
-[ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://player.tscn" id="2_qbig2"]
+[ext_resource type="Script" path="res://Scripts/scene/world2.gd" id="1_iaxo3"]
+[ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://Item/player.tscn" id="2_qbig2"]
 [ext_resource type="Texture2D" uid="uid://cnik21pvjhbi0" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorB.png" id="2_u30j2"]
 [ext_resource type="Texture2D" uid="uid://ctdqbtpahfo4k" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_3hm15"]
-[ext_resource type="Script" path="res://Scripts/entry.gd" id="4_akf8j"]
-[ext_resource type="Script" path="res://Scripts/gate.gd" id="6_g4sf3"]
-[ext_resource type="Script" path="res://Scripts/ground.gd" id="7_vttqn"]
-[ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://enemy.tscn" id="8_l1i8m"]
+[ext_resource type="Script" path="res://Scripts/map/entry.gd" id="4_akf8j"]
+[ext_resource type="Script" path="res://Scripts/map/gate.gd" id="6_g4sf3"]
+[ext_resource type="Script" path="res://Scripts/map/ground.gd" id="7_vttqn"]
+[ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://Item/enemy.tscn" id="8_l1i8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aupfa"]
 texture = ExtResource("1_ctk0h")
