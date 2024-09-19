@@ -61,7 +61,7 @@ general/export_characters_in_translation=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 

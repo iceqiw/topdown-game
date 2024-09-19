@@ -4,6 +4,8 @@ const SPEED = 5000.0
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var control: StatusBar = $panel/Control
 @onready var effect: AnimationPlayer = $Effect
+@onready var inventory_handler: InventoryHandler = $panel/InventoryHandler
+@onready var inventory_gui: PlayerInv = $panel/InventoryGui
 
 var is_attacking := false
 var is_idle := true
@@ -17,6 +19,7 @@ var enemy: Enemy
 
 var health = 100
 signal take_damage(hp)
+signal add_item_inv(item: Item)
 
 var is_pause=false
  
@@ -103,3 +106,9 @@ func knockback(enemy_velocity:Vector2):
 func _on_damage_timer_timeout() -> void:
 	damaged_cooldown = true;
 	health+=1
+
+
+func _on_add_item_inv(item: Item) -> void:
+	inventory_handler.add_to_inventory(inventory_handler.get_inventory(0),item,1)
+	inventory_gui.update_ui_event.emit()
+	

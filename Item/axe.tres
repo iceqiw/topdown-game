@@ -1,0 +1,9 @@
+[gd_resource type="ItemDefinition" load_steps=2 format=3 uid="uid://doyg26l7hyp62"]
+
+[ext_resource type="Texture2D" uid="uid://3x78uooacj02" path="res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Axe/Sprite.png" id="1_u5jup"]
+
+[resource]
+id = 3
+max_stack = 99
+name = "test"
+icon = ExtResource("1_u5jup")

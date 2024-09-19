@@ -1,0 +1,9 @@
+[gd_resource type="ItemDefinition" load_steps=2 format=3 uid="uid://cghxqdugixafl"]
+
+[ext_resource type="Texture2D" uid="uid://c1hcq8pca7p1g" path="res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Rapier/Sprite.png" id="1_b4h7c"]
+
+[resource]
+id = 3
+max_stack = 99
+name = "test"
+icon = ExtResource("1_b4h7c")

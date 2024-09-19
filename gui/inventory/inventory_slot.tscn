@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/gui/inventory_slot_gui.gd" id="1_nfhdr"]
 [ext_resource type="Texture2D" uid="uid://dbf6ls6mb65ip" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeDark/nine_path_panel.png" id="2_8stde"]
-[ext_resource type="Script" path="res://Scripts/gui/item_stats.gd" id="3_oubu5"]
+[ext_resource type="Script" path="res://Scripts/gui/slot_gui_texture.gd" id="3_4wfjp"]
 
 [node name="Slot" type="PanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -10,10 +10,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_nfhdr")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="bg" type="TextureRect" parent="."]
 layout_mode = 2
 texture = ExtResource("2_8stde")
-script = ExtResource("3_oubu5")
+
+[node name="item" type="TextureRect" parent="."]
+layout_mode = 2
+script = ExtResource("3_4wfjp")
 
 [node name="debug" type="Label" parent="."]
 unique_name_in_owner = true

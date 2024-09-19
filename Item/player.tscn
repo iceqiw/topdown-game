@@ -1,10 +1,12 @@
-[gd_scene load_steps=51 format=3 uid="uid://bdit8lhgq6y0a"]
+[gd_scene load_steps=53 format=3 uid="uid://bdit8lhgq6y0a"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wkerc"]
 [ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://Gui/control.tscn" id="2_npdrl"]
 [ext_resource type="PackedScene" uid="uid://ixexbs7h7usp" path="res://Gui/inventory/inventory_gui.tscn" id="3_o6wph"]
 [ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="4_js8p0"]
+[ext_resource type="InventoryDatabase" uid="uid://by1jjw1sghrop" path="res://database/inv.tres" id="4_oaocq"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="5_crsye"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_handler.gd" id="5_hxo8a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vxwne"]
 radius = 7.0
@@ -500,7 +502,7 @@ layer = 3
 
 [node name="Control" parent="panel" instance=ExtResource("2_npdrl")]
 
-[node name="InventoryGui" parent="panel" instance=ExtResource("3_o6wph")]
+[node name="InventoryGui" parent="panel" node_paths=PackedStringArray("inventory") instance=ExtResource("3_o6wph")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -508,6 +510,16 @@ offset_left = -136.5
 offset_right = 136.5
 offset_bottom = 45.0
 grow_horizontal = 2
+inventory = NodePath("../InventoryHandler/Inventory")
+
+[node name="InventoryHandler" type="InventoryHandler" parent="panel"]
+inventories_path = Array[NodePath]([NodePath("Inventory")])
+database = ExtResource("4_oaocq")
+script = ExtResource("5_hxo8a")
+
+[node name="Inventory" type="Inventory" parent="panel/InventoryHandler"]
+slots = Array[Slot]([null, null, null, null, null, null])
+database = ExtResource("4_oaocq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vxwne")
@@ -520,7 +532,7 @@ texture = ExtResource("4_js8p0")
 centered = false
 hframes = 6
 vframes = 10
-frame = 11
+frame = 7
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
@@ -565,8 +577,8 @@ libraries = {
 "": SubResource("AnimationLibrary_gwtlg")
 }
 
-[connection signal="closed" from="panel/InventoryGui" to="panel" method="_on_inventory_gui_closed"]
-[connection signal="opened" from="panel/InventoryGui" to="panel" method="_on_inventory_gui_opened"]
+[connection signal="add_item_inv" from="." to="." method="_on_add_item_inv"]
+[connection signal="item_added" from="panel/InventoryHandler/Inventory" to="panel/InventoryHandler" method="_on_inventory_item_added"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_p_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_p_hitbox_body_exited"]
 [connection signal="timeout" from="damaged_timer" to="." method="_on_damage_timer_timeout"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=4 uid="uid://ounpjvwdys34"]
+[gd_scene load_steps=31 format=4 uid="uid://ounpjvwdys34"]
 
 [ext_resource type="Script" path="res://Scripts/scene/world1.gd" id="1_s51ks"]
-[ext_resource type="PackedScene" uid="uid://savmmdonnxuw" path="res://Item/pick_item.tscn" id="2_cckmr"]
 [ext_resource type="Script" path="res://Scripts/map/gate.gd" id="2_d08xb"]
 [ext_resource type="Script" path="res://Scripts/map/entry.gd" id="3_4ln1j"]
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="4_xl0ch"]
@@ -12,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://b66iqbcdaxupb" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="9_oter5"]
 [ext_resource type="Texture2D" uid="uid://b0kja3m0qjw1m" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="10_fkuc7"]
 [ext_resource type="PackedScene" uid="uid://bdit8lhgq6y0a" path="res://Item/player.tscn" id="11_43qk5"]
-[ext_resource type="Resource" uid="uid://bh2pkrt8qt0mo" path="res://resource/Items/axe.tres" id="12_agfpo"]
+[ext_resource type="ItemDefinition" uid="uid://doyg26l7hyp62" path="res://Item/axe.tres" id="12_con1f"]
 [ext_resource type="PackedScene" uid="uid://dcpfrl1bvkbfq" path="res://Item/enemy.tscn" id="12_tvotc"]
+[ext_resource type="PackedScene" uid="uid://bg65h5q47kkkl" path="res://Item/inv_item.tscn" id="13_0sg4h"]
+[ext_resource type="ItemDefinition" uid="uid://cghxqdugixafl" path="res://Item/sword.tres" id="13_0xksa"]
 [ext_resource type="PackedScene" uid="uid://cvyrrag07r1eg" path="res://Item/box1.tscn" id="13_rbkw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pwyi"]
@@ -346,6 +347,12 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.102018, 0.394427, 0.653213, 1)
 sources/0 = SubResource("TileSetAtlasSource_u4ht3")
 
+[sub_resource type="Item" id="Item_anyjw"]
+definition = ExtResource("12_con1f")
+
+[sub_resource type="Item" id="Item_khrp1"]
+definition = ExtResource("13_0xksa")
+
 [node name="World1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_s51ks")
@@ -397,19 +404,13 @@ tile_set = SubResource("TileSet_04ks8")
 
 [node name="Pick" type="Node" parent="Map"]
 
-[node name="PickItem" parent="Map/Pick" instance=ExtResource("2_cckmr")]
-position = Vector2(432, 236)
-item = ExtResource("12_agfpo")
+[node name="InvItem" parent="Map/Pick" instance=ExtResource("13_0sg4h")]
+position = Vector2(425, 106)
+item = SubResource("Item_anyjw")
 
-[node name="PickItem2" parent="Map/Pick" instance=ExtResource("2_cckmr")]
-position = Vector2(568, 400)
-
-[node name="PickItem3" parent="Map/Pick" instance=ExtResource("2_cckmr")]
-position = Vector2(571.5, 128)
-item = ExtResource("12_agfpo")
-
-[node name="PickItem4" parent="Map/Pick" instance=ExtResource("2_cckmr")]
-position = Vector2(336, 288)
+[node name="InvItem2" parent="Map/Pick" instance=ExtResource("13_0sg4h")]
+position = Vector2(495, 134)
+item = SubResource("Item_khrp1")
 
 [node name="Player" parent="." instance=ExtResource("11_43qk5")]
 texture_filter = 1
