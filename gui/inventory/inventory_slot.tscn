@@ -1,25 +1,70 @@
 [gd_scene load_steps=4 format=3 uid="uid://ptkdotg56a2w"]
 
-[ext_resource type="Script" path="res://Scripts/gui/inventory_slot_gui.gd" id="1_nfhdr"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_slot_gui.gd" id="1_nfhdr"]
 [ext_resource type="Texture2D" uid="uid://dbf6ls6mb65ip" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeDark/nine_path_panel.png" id="2_8stde"]
-[ext_resource type="Script" path="res://Scripts/gui/slot_gui_texture.gd" id="3_4wfjp"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory/slot_gui_texture.gd" id="3_4wfjp"]
 
-[node name="Slot" type="PanelContainer"]
+[node name="Slot" type="Control"]
 custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+focus_mode = 2
 script = ExtResource("1_nfhdr")
 
 [node name="bg" type="TextureRect" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_8stde")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="item" type="TextureRect" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
 script = ExtResource("3_4wfjp")
 
-[node name="debug" type="Label" parent="."]
+[node name="amount" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 39.0
+offset_top = 17.0
+offset_right = 40.0
+offset_bottom = 40.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

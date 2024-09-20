@@ -5,9 +5,8 @@ extends TextureRect
 @export var amount = 0:
 	set(value):
 		amount = value
-		%debug.text = str(amount)
-		if amount==0:
-			%debug.visible=false
+		%amount.text = str(amount)
+		%amount.visible= amount > 0
 
 @onready var property: Dictionary = {"TEXTURE": texture, "AMT": amount}:
 	set(value):

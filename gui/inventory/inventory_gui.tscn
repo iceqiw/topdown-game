@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ixexbs7h7usp"]
+[gd_scene load_steps=5 format=3 uid="uid://ixexbs7h7usp"]
 
 [ext_resource type="Texture2D" uid="uid://csokjgsg0psfw" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png" id="1_7ysrq"]
-[ext_resource type="Script" path="res://Scripts/gui/inventory_gui.gd" id="1_jgmta"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_gui.gd" id="1_jgmta"]
 [ext_resource type="PackedScene" uid="uid://ptkdotg56a2w" path="res://Gui/inventory/inventory_slot.tscn" id="2_5jcma"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory/transation_slot_ui.gd" id="4_0rsq5"]
 
 [node name="InventoryGui" type="Control"]
 layout_mode = 3
@@ -30,3 +31,9 @@ offset_top = 2.0
 offset_right = 266.0
 offset_bottom = 42.0
 columns = 8
+
+[node name="TransactionSlotUI" parent="." instance=ExtResource("2_5jcma")]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+script = ExtResource("4_0rsq5")

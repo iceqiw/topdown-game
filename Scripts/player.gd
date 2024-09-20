@@ -4,8 +4,10 @@ const SPEED = 5000.0
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var control: StatusBar = $panel/Control
 @onready var effect: AnimationPlayer = $Effect
-@onready var inventory_handler: InventoryHandler = $panel/InventoryHandler
+@onready var inventory_handler: InventoryHandler =$panel/NodeInventories/InventoryHandler
 @onready var inventory_gui: PlayerInv = $panel/InventoryGui
+
+var main_inv:Inventory
 
 var is_attacking := false
 var is_idle := true
@@ -26,6 +28,7 @@ var is_pause=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	take_damage.connect(_deal_on_damage)
+	main_inv=inventory_handler.get_inventory(0)
 	
 func _physics_process(delta: float) -> void:
 	move(delta)
@@ -109,6 +112,5 @@ func _on_damage_timer_timeout() -> void:
 
 
 func _on_add_item_inv(item: Item) -> void:
-	inventory_handler.add_to_inventory(inventory_handler.get_inventory(0),item,1)
-	inventory_gui.update_ui_event.emit()
+	inventory_handler.add_to_inventory(main_inv,item,1)
 	
