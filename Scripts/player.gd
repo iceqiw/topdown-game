@@ -5,7 +5,7 @@ const SPEED = 5000.0
 @onready var control: StatusBar = $panel/Control
 @onready var effect: AnimationPlayer = $Effect
 @onready var inventory_handler: InventoryHandler =$panel/NodeInventories/InventoryHandler
-@onready var inventory_gui: PlayerInv = $panel/InventoryGui
+@onready var inventory_sys: InventorySystemUI = $panel/InventoryGui
 
 var main_inv:Inventory
 
@@ -28,7 +28,9 @@ var is_pause=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	take_damage.connect(_deal_on_damage)
+	add_item_inv.connect(_on_add_item_inv)
 	main_inv=inventory_handler.get_inventory(0)
+	
 	
 func _physics_process(delta: float) -> void:
 	move(delta)

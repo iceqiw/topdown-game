@@ -1,8 +1,7 @@
-[gd_scene load_steps=31 format=4 uid="uid://ounpjvwdys34"]
+[gd_scene load_steps=30 format=4 uid="uid://ounpjvwdys34"]
 
 [ext_resource type="Script" path="res://Scripts/scene/world1.gd" id="1_s51ks"]
-[ext_resource type="Script" path="res://Scripts/map/gate.gd" id="2_d08xb"]
-[ext_resource type="Script" path="res://Scripts/map/entry.gd" id="3_4ln1j"]
+[ext_resource type="PackedScene" uid="uid://14hoe8sojo0d" path="res://Scenes/gate.tscn" id="2_7cjl7"]
 [ext_resource type="Texture2D" uid="uid://d1p3kojnvmabd" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="4_xl0ch"]
 [ext_resource type="Texture2D" uid="uid://fh3wo4nxppo3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetRelief.png" id="5_4llqq"]
 [ext_resource type="Script" path="res://Scripts/map/ground.gd" id="6_8i5dy"]
@@ -16,9 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bg65h5q47kkkl" path="res://Item/inv_item.tscn" id="13_0sg4h"]
 [ext_resource type="ItemDefinition" uid="uid://cghxqdugixafl" path="res://Item/sword.tres" id="13_0xksa"]
 [ext_resource type="PackedScene" uid="uid://cvyrrag07r1eg" path="res://Item/box1.tscn" id="13_rbkw7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pwyi"]
-size = Vector2(21, 22)
+[ext_resource type="PackedScene" uid="uid://dsxd4qo3p1k1x" path="res://Scenes/loft.tscn" id="14_qwd8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okbmn"]
 texture = ExtResource("4_xl0ch")
@@ -368,19 +365,13 @@ position = Vector2(432, 236)
 position = Vector2(-152, -128)
 polygon = PackedVector2Array(-288, -104, -288, 432, 688, 432, 688, -168, 744, -168, 736, 488, -344, 488, -360, -176, 688, -168, 688, -112)
 
-[node name="gate_top" type="Area2D" parent="Map"]
-position = Vector2(168, -77)
-script = ExtResource("2_d08xb")
+[node name="gate_top" parent="Map" instance=ExtResource("2_7cjl7")]
+position = Vector2(136, -203)
 scene = "world2"
-entry_point = "entry2"
+entry_point = "w2"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/gate_top"]
-position = Vector2(-32, -128)
-shape = SubResource("RectangleShape2D_8pwyi")
-
-[node name="entry1" type="Marker2D" parent="Map/gate_top"]
-position = Vector2(-28, -103)
-script = ExtResource("3_4ln1j")
+[node name="after_entry" parent="Map/gate_top" index="1"]
+coordinate = "w1"
 
 [node name="ground" type="TileMapLayer" parent="Map"]
 z_index = -1
@@ -412,6 +403,9 @@ item = SubResource("Item_anyjw")
 position = Vector2(495, 134)
 item = SubResource("Item_khrp1")
 
+[node name="Loft" parent="Map" instance=ExtResource("14_qwd8t")]
+position = Vector2(138, -115)
+
 [node name="Player" parent="." instance=ExtResource("11_43qk5")]
 texture_filter = 1
 position = Vector2(304, 216)
@@ -423,4 +417,4 @@ position = Vector2(672, 253)
 position = Vector2(336, 128)
 scale = Vector2(1, 1)
 
-[connection signal="body_entered" from="Map/gate_top" to="Map/gate_top" method="_on_body_entered"]
+[editable path="Map/gate_top"]

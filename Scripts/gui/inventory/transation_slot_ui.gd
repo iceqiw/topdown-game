@@ -15,6 +15,6 @@ func clear_info():
 	self.visible = false
 
 
-func _process(delta):
+func _process(_delta):
 	if self.visible:
-		self.global_position = get_global_mouse_position()  - size/2
+		self.global_position = get_global_mouse_position()  - size/2 

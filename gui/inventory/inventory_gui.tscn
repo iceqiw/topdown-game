@@ -1,39 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://ixexbs7h7usp"]
+[gd_scene load_steps=6 format=3 uid="uid://ixexbs7h7usp"]
 
-[ext_resource type="Texture2D" uid="uid://csokjgsg0psfw" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png" id="1_7ysrq"]
+[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_sys_gui.gd" id="1_4mus8"]
 [ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_gui.gd" id="1_jgmta"]
 [ext_resource type="PackedScene" uid="uid://ptkdotg56a2w" path="res://Gui/inventory/inventory_slot.tscn" id="2_5jcma"]
 [ext_resource type="Script" path="res://Scripts/gui/inventory/transation_slot_ui.gd" id="4_0rsq5"]
+[ext_resource type="Texture2D" uid="uid://5lq4fdhh6208" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal3/nine_path_panel.png" id="5_ufgy8"]
 
-[node name="InventoryGui" type="Control"]
+[node name="InventorySystemGui" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 272.0
 offset_bottom = 48.0
-script = ExtResource("1_jgmta")
-slot_ui_scene = ExtResource("2_5jcma")
+mouse_filter = 1
+script = ExtResource("1_4mus8")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="TransactionSlotUI" parent="." instance=ExtResource("2_5jcma")]
+visible = false
+modulate = Color(1, 1, 1, 0.756863)
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+mouse_filter = 1
+script = ExtResource("4_0rsq5")
+
+[node name="Panel" parent="TransactionSlotUI" index="0"]
+visible = false
+
+[node name="bg" parent="TransactionSlotUI" index="1"]
+visible = false
+
+[node name="item" parent="TransactionSlotUI" index="2"]
+focus_mode = 2
+mouse_filter = 2
+
+[node name="LootInventoryUI" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 2.0
 offset_right = 274.0
 offset_bottom = 48.0
-texture = ExtResource("1_7ysrq")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+focus_mode = 2
+script = ExtResource("1_jgmta")
+slot_ui_scene = ExtResource("2_5jcma")
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="NinePatchRect" type="NinePatchRect" parent="LootInventoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ufgy8")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="HBoxContainer" parent="LootInventoryUI"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 2.0
 offset_right = 266.0
 offset_bottom = 42.0
-columns = 8
+focus_mode = 2
+alignment = 1
 
-[node name="TransactionSlotUI" parent="." instance=ExtResource("2_5jcma")]
-visible = false
-layout_mode = 0
-mouse_filter = 2
-script = ExtResource("4_0rsq5")
+[editable path="TransactionSlotUI"]

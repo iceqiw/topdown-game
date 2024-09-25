@@ -499,10 +499,11 @@ script = ExtResource("1_wkerc")
 [node name="panel" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 3
+visible = false
 
 [node name="Control" parent="panel" instance=ExtResource("2_npdrl")]
 
-[node name="InventoryGui" parent="panel" node_paths=PackedStringArray("inventory", "inventory_handler") instance=ExtResource("3_o6wph")]
+[node name="InventoryGui" parent="panel" node_paths=PackedStringArray("inventory_handler") instance=ExtResource("3_o6wph")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -510,7 +511,7 @@ offset_left = -136.5
 offset_right = 136.5
 offset_bottom = 45.0
 grow_horizontal = 2
-inventory = NodePath("../NodeInventories/InventoryHandler/Inventory")
+focus_mode = 2
 inventory_handler = NodePath("../NodeInventories/InventoryHandler")
 
 [node name="NodeInventories" type="NodeInventories" parent="panel"]
@@ -581,7 +582,6 @@ libraries = {
 "": SubResource("AnimationLibrary_gwtlg")
 }
 
-[connection signal="add_item_inv" from="." to="." method="_on_add_item_inv"]
 [connection signal="updated_transaction_slot" from="panel/NodeInventories/InventoryHandler" to="panel/InventoryGui" method="_on_inventory_handler_updated_transaction_slot"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_p_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_p_hitbox_body_exited"]
