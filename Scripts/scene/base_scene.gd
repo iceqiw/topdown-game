@@ -1,6 +1,6 @@
 class_name BaseScene extends Node
 
-@onready var player: Player = $Player
+@export var player: Player
 
 
 # Called when the node enters the scene tree for the first time.

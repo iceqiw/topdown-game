@@ -350,9 +350,10 @@ definition = ExtResource("12_con1f")
 [sub_resource type="Item" id="Item_khrp1"]
 definition = ExtResource("13_0xksa")
 
-[node name="World1" type="Node2D"]
+[node name="World1" type="Node2D" node_paths=PackedStringArray("player")]
 y_sort_enabled = true
 script = ExtResource("1_s51ks")
+player = NodePath("Player")
 metadata/_edit_horizontal_guides_ = [0.0]
 
 [node name="Map" type="Node2D" parent="."]
@@ -406,6 +407,13 @@ item = SubResource("Item_khrp1")
 [node name="Loft" parent="Map" instance=ExtResource("14_qwd8t")]
 position = Vector2(138, -115)
 
+[node name="gate" parent="Map/Loft" index="2"]
+scene = "loft1"
+entry_point = "loft1"
+
+[node name="after_entry" parent="Map/Loft/gate" index="1"]
+coordinate = "wl1"
+
 [node name="Player" parent="." instance=ExtResource("11_43qk5")]
 texture_filter = 1
 position = Vector2(304, 216)
@@ -418,3 +426,5 @@ position = Vector2(336, 128)
 scale = Vector2(1, 1)
 
 [editable path="Map/gate_top"]
+[editable path="Map/Loft"]
+[editable path="Map/Loft/gate"]

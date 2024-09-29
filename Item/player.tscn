@@ -499,7 +499,6 @@ script = ExtResource("1_wkerc")
 [node name="panel" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 3
-visible = false
 
 [node name="Control" parent="panel" instance=ExtResource("2_npdrl")]
 
