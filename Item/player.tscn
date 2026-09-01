@@ -1,12 +1,13 @@
-[gd_scene load_steps=53 format=3 uid="uid://bdit8lhgq6y0a"]
+[gd_scene load_steps=54 format=3 uid="uid://bdit8lhgq6y0a"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wkerc"]
+[ext_resource type="Script" uid="uid://ht1ueleg0usc" path="res://Scripts/player.gd" id="1_wkerc"]
 [ext_resource type="PackedScene" uid="uid://cgvmyjlifkjhx" path="res://Gui/control.tscn" id="2_npdrl"]
 [ext_resource type="PackedScene" uid="uid://ixexbs7h7usp" path="res://Gui/inventory/inventory_gui.tscn" id="3_o6wph"]
 [ext_resource type="Texture2D" uid="uid://bni1dab3wbnns" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/player.png" id="4_js8p0"]
 [ext_resource type="InventoryDatabase" uid="uid://by1jjw1sghrop" path="res://database/inv.tres" id="4_oaocq"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="5_crsye"]
-[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_handler.gd" id="5_oxqq5"]
+[ext_resource type="Script" uid="uid://bfsjtcwx8i4nn" path="res://Scripts/camera_2d.gd" id="5_crsye"]
+[ext_resource type="Script" uid="uid://c268u1yofgkor" path="res://Scripts/gui/inventory/inventory_handler.gd" id="5_oxqq5"]
+[ext_resource type="Script" uid="uid://camvyuktpj0dr" path="res://Item/inventory.gd" id="6_xb1e0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vxwne"]
 radius = 7.0
@@ -318,19 +319,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_44x2a"]
 _data = {
-"attack_down": SubResource("Animation_w8k7k"),
-"attack_left": SubResource("Animation_7n3wo"),
-"attack_right": SubResource("Animation_4tyj4"),
-"attack_up": SubResource("Animation_m5qju"),
-"dead": SubResource("Animation_0kbmq"),
-"down": SubResource("Animation_k4fny"),
-"idle_down": SubResource("Animation_qtck7"),
-"idle_left": SubResource("Animation_jtxqi"),
-"idle_right": SubResource("Animation_qs3lt"),
-"idle_up": SubResource("Animation_s38wo"),
-"left": SubResource("Animation_y11ue"),
-"right": SubResource("Animation_udrxk"),
-"up": SubResource("Animation_6o0ei")
+&"attack_down": SubResource("Animation_w8k7k"),
+&"attack_left": SubResource("Animation_7n3wo"),
+&"attack_right": SubResource("Animation_4tyj4"),
+&"attack_up": SubResource("Animation_m5qju"),
+&"dead": SubResource("Animation_0kbmq"),
+&"down": SubResource("Animation_k4fny"),
+&"idle_down": SubResource("Animation_qtck7"),
+&"idle_left": SubResource("Animation_jtxqi"),
+&"idle_right": SubResource("Animation_qs3lt"),
+&"idle_up": SubResource("Animation_s38wo"),
+&"left": SubResource("Animation_y11ue"),
+&"right": SubResource("Animation_udrxk"),
+&"up": SubResource("Animation_6o0ei")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jr7ua"]
@@ -488,8 +489,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwtlg"]
 _data = {
-"RESET": SubResource("Animation_2p8ud"),
-"damaged": SubResource("Animation_8j6pg")
+&"RESET": SubResource("Animation_2p8ud"),
+&"damaged": SubResource("Animation_8j6pg")
 }
 
 [node name="player" type="CharacterBody2D"]
@@ -524,6 +525,7 @@ database = ExtResource("4_oaocq")
 [node name="Inventory" type="Inventory" parent="panel/NodeInventories/InventoryHandler"]
 slots = Array[Slot]([null, null, null, null, null, null])
 database = ExtResource("4_oaocq")
+script = ExtResource("6_xb1e0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vxwne")
@@ -536,7 +538,7 @@ texture = ExtResource("4_js8p0")
 centered = false
 hframes = 6
 vframes = 10
-frame = 8
+frame = 11
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
@@ -547,7 +549,7 @@ offset_bottom = 53.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_44x2a")
+&"": SubResource("AnimationLibrary_44x2a")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -567,7 +569,6 @@ shape = SubResource("CircleShape2D_2im6j")
 [node name="damaged_timer" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
@@ -578,7 +579,7 @@ script = ExtResource("5_crsye")
 
 [node name="Effect" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_gwtlg")
+&"": SubResource("AnimationLibrary_gwtlg")
 }
 
 [connection signal="updated_transaction_slot" from="panel/NodeInventories/InventoryHandler" to="panel/InventoryGui" method="_on_inventory_handler_updated_transaction_slot"]

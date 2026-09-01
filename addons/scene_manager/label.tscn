@@ -1,4 +1,4 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://cc3k2vb6eq4b1"]
 
 [node name="value" type="Label"]
 offset_left = 165.0

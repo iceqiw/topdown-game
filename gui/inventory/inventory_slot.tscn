@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ptkdotg56a2w"]
 
-[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_slot_gui.gd" id="1_nfhdr"]
+[ext_resource type="Script" uid="uid://btm58dqmwh2pp" path="res://Scripts/gui/inventory/inventory_slot_gui.gd" id="1_nfhdr"]
 [ext_resource type="Texture2D" uid="uid://dbf6ls6mb65ip" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeDark/nine_path_panel.png" id="2_8stde"]
 
 [node name="Slot" type="Control"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://kuckh8lq8mwr"]
 
 [ext_resource type="PackedScene" uid="uid://y7s1081jj0hp" path="res://addons/inventory-system/editor/base/inventory_tab_editor.tscn" id="1_nu8gk"]
-[ext_resource type="Script" path="res://addons/inventory-system/editor/items/items_editor.gd" id="2_8swun"]
+[ext_resource type="Script" uid="uid://crhblfabn5d2i" path="res://addons/inventory-system/editor/items/items_editor.gd" id="2_8swun"]
 [ext_resource type="PackedScene" uid="uid://d0ykb6vojc7ga" path="res://addons/inventory-system/editor/items/inventory_item_list.tscn" id="3_dqmno"]
 [ext_resource type="PackedScene" uid="uid://5wb5xuou85vf" path="res://addons/inventory-system/editor/items/item_editor.tscn" id="4_ppg00"]
 

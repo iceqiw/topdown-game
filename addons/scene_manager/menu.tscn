@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://crnf0w0s44hxx"]
 
-[ext_resource type="PackedScene" path="res://addons/scene_manager/label.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cc3k2vb6eq4b1" path="res://addons/scene_manager/label.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://bt1mtu3gbmwqc" path="res://addons/scene_manager/icons/FileDialog.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://jsditrvsfs5h" path="res://addons/scene_manager/icons/Reload.svg" id="5_2r30m"]
 [ext_resource type="Texture2D" uid="uid://briccm8yhbi21" path="res://addons/scene_manager/icons/Save.svg" id="5_yw87d"]
-[ext_resource type="Script" path="res://addons/scene_manager/manager.gd" id="6"]
+[ext_resource type="Script" uid="uid://by4nffwwbu3dg" path="res://addons/scene_manager/manager.gd" id="6"]
 [ext_resource type="Texture2D" uid="uid://db46q6hma7y7o" path="res://addons/scene_manager/icons/FolderActive.svg" id="7_3r2fd"]
 [ext_resource type="Texture2D" uid="uid://cnhtsuf78gsy7" path="res://addons/scene_manager/icons/GuiChecked.svg" id="7_d04a5"]
 

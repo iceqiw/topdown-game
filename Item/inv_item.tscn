@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg65h5q47kkkl"]
+[gd_scene format=3 uid="uid://bg65h5q47kkkl"]
 
-[ext_resource type="Script" path="res://Scripts/gui/inventory/inv_item.gd" id="1_v7tnx"]
+[ext_resource type="Script" uid="uid://bk7ji3yvk4vn7" path="res://Scripts/gui/inventory/inv_item.gd" id="1_v7tnx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2h6ei"]
 radius = 8.24621
 
-[node name="InvItem" type="Area2D"]
+[node name="InvItem" type="Area2D" unique_id=1171207497]
 script = ExtResource("1_v7tnx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100731476]
 shape = SubResource("CircleShape2D_2h6ei")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=217680123]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

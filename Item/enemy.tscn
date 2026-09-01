@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dcpfrl1bvkbfq"]
 
 [ext_resource type="Texture2D" uid="uid://dsjck4p3tqyja" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/CaveLion2/SeparateAnim/Walk.png" id="1_ghrgn"]
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_tr1bw"]
+[ext_resource type="Script" uid="uid://cfop0f3lyeoqs" path="res://Scripts/enemy.gd" id="1_tr1bw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l4pdc"]
 radius = 6.0
@@ -51,9 +51,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_meb06"]
 _data = {
-"RESET": SubResource("Animation_c2lq0"),
-"damaged": SubResource("Animation_57wu2"),
-"idle": SubResource("Animation_5oyoc")
+&"RESET": SubResource("Animation_c2lq0"),
+&"damaged": SubResource("Animation_57wu2"),
+&"idle": SubResource("Animation_5oyoc")
 }
 
 [sub_resource type="Animation" id="Animation_gtaui"]
@@ -89,8 +89,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_li4jm"]
 _data = {
-"RESET": SubResource("Animation_gtaui"),
-"damaged": SubResource("Animation_4oiwc")
+&"RESET": SubResource("Animation_gtaui"),
+&"damaged": SubResource("Animation_4oiwc")
 }
 
 [node name="enemy" type="CharacterBody2D"]

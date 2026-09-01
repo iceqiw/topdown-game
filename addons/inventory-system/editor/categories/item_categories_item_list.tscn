@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yb8wore3as0d"]
 
-[ext_resource type="Script" path="res://addons/inventory-system/editor/categories/item_categories_item_list.gd" id="1_3hcv6"]
+[ext_resource type="Script" uid="uid://biqrrd3i6mpb" path="res://addons/inventory-system/editor/categories/item_categories_item_list.gd" id="1_3hcv6"]
 
 [node name="ItemCategoriesItemList" type="VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)

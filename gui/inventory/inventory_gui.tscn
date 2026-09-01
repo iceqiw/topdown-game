@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ixexbs7h7usp"]
 
-[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_sys_gui.gd" id="1_4mus8"]
-[ext_resource type="Script" path="res://Scripts/gui/inventory/inventory_gui.gd" id="1_jgmta"]
+[ext_resource type="Script" uid="uid://dmg5n48cxdshu" path="res://Scripts/gui/inventory/inventory_sys_gui.gd" id="1_4mus8"]
+[ext_resource type="Script" uid="uid://bomcgh1faxm46" path="res://Scripts/gui/inventory/inventory_gui.gd" id="1_jgmta"]
 [ext_resource type="PackedScene" uid="uid://ptkdotg56a2w" path="res://Gui/inventory/inventory_slot.tscn" id="2_5jcma"]
-[ext_resource type="Script" path="res://Scripts/gui/inventory/transation_slot_ui.gd" id="4_0rsq5"]
+[ext_resource type="Script" uid="uid://c7aomdi0c8ywo" path="res://Scripts/gui/inventory/transation_slot_ui.gd" id="4_0rsq5"]
 [ext_resource type="Texture2D" uid="uid://5lq4fdhh6208" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal3/nine_path_panel.png" id="5_ufgy8"]
 
 [node name="InventorySystemGui" type="Control"]

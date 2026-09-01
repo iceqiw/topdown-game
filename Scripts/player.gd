@@ -115,4 +115,5 @@ func _on_damage_timer_timeout() -> void:
 
 func _on_add_item_inv(item: Item) -> void:
 	inventory_handler.add_to_inventory(main_inv,item,1)
+	main_inv.add(item,1)
 	

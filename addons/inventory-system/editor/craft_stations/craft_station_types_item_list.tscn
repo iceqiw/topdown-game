@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dn6l1p7td2wlb"]
 
-[ext_resource type="Script" path="res://addons/inventory-system/editor/craft_stations/craft_station_types_item_list.gd" id="1_5vv4s"]
+[ext_resource type="Script" uid="uid://xm0jwam77lb6" path="res://addons/inventory-system/editor/craft_stations/craft_station_types_item_list.gd" id="1_5vv4s"]
 
 [node name="CraftStationTypesItemList" type="VBoxContainer"]
 custom_minimum_size = Vector2(256, 0)

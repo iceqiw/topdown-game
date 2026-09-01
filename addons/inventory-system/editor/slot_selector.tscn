@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://28kwhb0vuwhx"]
 
-[ext_resource type="Script" path="res://addons/inventory-system/editor/slot_selector.gd" id="1_js21a"]
+[ext_resource type="Script" uid="uid://mx7bjpsfvk04" path="res://addons/inventory-system/editor/slot_selector.gd" id="1_js21a"]
 [ext_resource type="PackedScene" uid="uid://bcs0kajdte05g" path="res://addons/inventory-system/editor/base/item_id_editor.tscn" id="2_sqn6h"]
 
 [node name="SlotSelector" type="HBoxContainer"]

@@ -19,6 +19,7 @@ var slots : Array[SlotGui]
 
 func _ready() -> void:
 	visible = true
+	
 
 	
 func set_inventory(inv : Inventory):
