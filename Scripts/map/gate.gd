@@ -27,4 +27,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		SceneManager.set_recorded_scene(scene)
 		SceneManager.change_scene("loading", fade_out_options, fade_in_options, general_options)
-		sm.change_scence(entry_point)
+		sm.change_scene(entry_point)
